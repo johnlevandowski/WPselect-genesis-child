@@ -397,22 +397,11 @@ ul.menu li.sfHover ul,
 	left: auto;
 }
 
-.menu-primary li a.sf-with-ul,
-.menu-secondary li a.sf-with-ul,
-#header .menu li a.sf-with-ul {
-	padding-right: 25px;
-}
-
 .menu li a .sf-sub-indicator,
 .menu li li a .sf-sub-indicator,
 .menu li li li a .sf-sub-indicator {
-	background: url(images/icon-plus.png) no-repeat;
-	height: 16px;
 	position: absolute;
-	right: 8px;
 	text-indent: -9999px;
-	top: 10px;
-	width: 16px;
 }
 
 #wpadminbar li:hover ul ul {
@@ -1431,11 +1420,6 @@ div.gform_wrapper .gform_footer {
 	#header .menu li a {
 		margin: 0;
 		padding: 7px 3%;
-	}
-
-	.menu li li a .sf-sub-indicator,
-	.menu li li li a .sf-sub-indicator {
-		background: url(images/icon-plus-white.png) right no-repeat;
 	}
 
 	.menu-primary li li a,
