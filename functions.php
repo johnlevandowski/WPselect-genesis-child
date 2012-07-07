@@ -3,8 +3,8 @@
 require_once( get_template_directory() . '/lib/init.php' );
 
 /** Child theme (do not remove) */
-define( 'CHILD_THEME_NAME', 'Sample Child Theme' );
-define( 'CHILD_THEME_URL', 'http://www.studiopress.com/themes/genesis' );
+define( 'CHILD_THEME_NAME', 'WPselect' );
+define( 'CHILD_THEME_URL', 'http://wpselect.com/' );
 
 /** Add Viewport meta tag for mobile browsers */
 add_action( 'genesis_meta', 'add_viewport_meta_tag' );
@@ -13,7 +13,7 @@ function add_viewport_meta_tag() {
 }
 
 /** Add support for custom background */
-add_custom_background();
+add_theme_support( 'custom-background' );
 
 /** Add support for custom header */
 add_theme_support( 'genesis-custom-header', array( 'width' => 960, 'height' => 100 ) );
