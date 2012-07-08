@@ -1384,18 +1384,6 @@ div.gform_wrapper .gform_footer {
 
 @media only screen and (max-width: 600px) {
 
-	.menu-primary li,
-	.menu-primary li ul,
-	.menu-primary li ul a,
-	.menu-secondary li,
-	.menu-secondary li ul,
-	.menu-secondary li ul a,
-	#header .menu li,
-	#header .menu li ul,
-	#header .menu li ul a {
-		width: 100%;
-	}
-	
 	.five-sixths,
 	.four-fifths,
 	.four-sixths,
@@ -1413,56 +1401,6 @@ div.gform_wrapper .gform_footer {
 	.two-thirds {
 		padding: 0;
 		width: 100%;
-	}
-
-	.menu-primary li a,
-	.menu-secondary li a,
-	#header .menu li a {
-		margin: 0;
-		padding: 7px 3%;
-	}
-
-	.menu-primary li li a,
-	.menu-primary li li a:link,
-	.menu-primary li li a:visited,
-	.menu-secondary li li a,
-	.menu-secondary li li a:link,
-	.menu-secondary li li a:visited,
-	#header .menu li li a,
-	#header .menu li li a:link,
-	#header .menu li li a:visited {
-		background: none;
-		color: #fff;
-		padding: 7px 3%;
-		width: 94%;
-	}
-
-	.menu-primary li ul,
-	.menu-secondary li ul,
-	#header .menu li ul {
-		background: #333;
-		clear: both;
-		margin: 0;
-		padding: 0;
-		position: inherit;
-	}
-
-	.menu-primary li ul ul,
-	.menu-secondary li ul ul,
-	#header .menu li ul ul {
-		background: #666;
-	}
-
-	.menu-primary li ul ul ul,
-	.menu-secondary li ul ul ul,
-	#header .menu li ul ul ul {
-		background: #999;
-	}
-
-	.menu-primary li ul ul,
-	.menu-secondary li ul ul,
-	#header .menu li ul ul {
-		margin: 0;
 	}
 
 }
