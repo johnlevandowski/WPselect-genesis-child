@@ -65,7 +65,7 @@
 /* Import Fonts
 ------------------------------------------------------------ */
 
-@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Rokkitt);
 
 
 /* Defaults
@@ -84,10 +84,10 @@ p,
 select,
 textarea {
 	color: #333;
-	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
-	font-weight: 300;
-	line-height: 1.5625;
+	font-weight: 400;
+	line-height: 1.625;
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
@@ -111,9 +111,9 @@ label,
 select,
 textarea {
 	color: #333;
-	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
-	font-weight: 300;
+	font-weight: 400;
 }
 
 li,
@@ -195,7 +195,7 @@ body {
 }
 
 #title {
-	font-family: 'Oswald', arial, serif;
+	font-family: 'Rokkitt', 'Times New Roman', Times, serif;
 	font-size: 36px;
 	line-height: 1.25;
 	margin: 0;
@@ -671,7 +671,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Oswald', arial, serif;
+	font-family: 'Rokkitt', 'Times New Roman', Times, serif;
 	line-height: 1.25;
 	margin: 0 0 10px;
 }
@@ -693,7 +693,6 @@ h2 a:visited {
 h2 a,
 h2 a:visited {
 	color: #333;
-	font-family: 'Oswald', arial, serif;
 }
 
 h2 a:hover {

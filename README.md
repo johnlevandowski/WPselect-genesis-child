@@ -4,6 +4,7 @@ Child Theme for Genesis Framework by [wpselect.com](http://wpselect.com/ "wpsele
 Changelog
 ---------
 
+* Fun with font-family
 * Remove custom style of menus for small screens
 * add_custom_background is deprecated use add_theme_support
 * Removed Superfish images in menus
