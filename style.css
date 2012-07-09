@@ -190,7 +190,7 @@ body {
 #title-area {
 	float: left;
 	overflow: hidden;
-	padding: 17px 0 0;
+	padding: 17px 0 10px 20px;
 	width: 400px;
 }
 
@@ -205,13 +205,11 @@ body {
 #title a,
 #title a:hover {
 	color: #333;
-	padding: 0 0 0 20px;
 	text-decoration: none;
 }
 
 #description {
 	font-size: 14px;
-	padding: 0 0 0 20px;
 }
 
 #header .widget-area {
@@ -450,6 +448,7 @@ ul.menu li.sfHover ul,
 ------------------------------------------------------------ */
 
 #inner {
+	clear: both;
 	margin: 0 auto;
 	overflow: hidden;
 	padding: 20px;
