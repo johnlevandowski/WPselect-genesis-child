@@ -57,6 +57,7 @@
 * Footer
 * Comments
 * Gravity Forms
+* WPselect Widget Areas
 * Responsive Design
 
 */
@@ -527,12 +528,13 @@ ul.menu li.sfHover ul,
 	margin: 0 0 40px;
 }
 
-.entry-content {
-	overflow: hidden;
-}
-
 .entry-content p {
 	margin: 0 0 25px;
+}
+
+.entry-content h1,
+.entry-content h2 {
+	clear: both;
 }
 
 blockquote {
@@ -1374,6 +1376,30 @@ div.gform_wrapper .gform_footer {
 	border: none;
 	margin: 0;
 	padding: 0;
+}
+
+
+/* WPselect Widget Areas
+------------------------------------------------------------ */
+
+.wpselect_before_content_sidebar_wrap .textwidget {
+	padding: 0 0 20px 0;
+	text-align: center;
+}
+
+.wpselect_after_post .textwidget {
+	padding: 0 0 40px 0;
+	text-align: center;
+}
+
+.wpselect_before_post_content .textwidget {
+	float: left;
+	padding: 0 25px 10px 0;
+}
+
+.wpselect_after_post_content .textwidget {
+	padding: 0 0 25px 0;
+	text-align: center;
 }
 
 

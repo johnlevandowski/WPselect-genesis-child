@@ -4,6 +4,7 @@ Child Theme for Genesis Framework by [wpselect.com](http://wpselect.com/ "wpsele
 Changelog
 ---------
 
+* Add additional widget areas for placing advertisements
 * Fixed text wrapping for long site title and description
 * Fun with font-family
 * Remove custom style of menus for small screens
