@@ -4,6 +4,7 @@ Child Theme for Genesis Framework by [wpselect.com](http://wpselect.com/ "wpsele
 Changelog
 ---------
 
+* Increase header title area width and widget text header size
 * Add additional widget areas for placing advertisements
 * Fixed text wrapping for long site title and description
 * Fun with font-family

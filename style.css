@@ -192,15 +192,14 @@ body {
 	float: left;
 	overflow: hidden;
 	padding: 17px 0 10px 20px;
-	width: 400px;
+	width: 640px;
 }
 
 #title {
 	font-family: 'Rokkitt', 'Times New Roman', Times, serif;
-	font-size: 36px;
+	font-size: 34px;
 	line-height: 1.25;
 	margin: 0;
-	text-transform: uppercase;
 }
 
 #title a,
@@ -216,7 +215,7 @@ body {
 #header .widget-area {
 	float: right;
 	padding: 25px 20px 0 0;
-	width: 510px;
+	width: 260px;
 }
 
 
@@ -719,7 +718,7 @@ h4 {
 .widget-area h4 {
 	background-color: #f5f5f5;
 	border-bottom: 1px solid #ddd;
-	font-size: 14px;
+	font-size: 16px;
 	padding: 9px 10px 8px;
 }
 
