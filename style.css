@@ -134,7 +134,7 @@ ol li {
 
 a,
 a:visited {
-	color: #0d72c7;
+	color: #12c;
 	text-decoration: none;
 }
 
@@ -155,12 +155,12 @@ body {
 }
 
 ::-moz-selection {
-	background-color: #0d72c7;
+	background-color: #12c;
 	color: #fff;
 }
 
 ::selection {
-	background-color: #0d72c7;
+	background-color: #12c;
 	color: #fff;
 }
 
@@ -424,7 +424,7 @@ ul.menu li.sfHover ul,
 }
 
 .menu li.right a:hover {
-	color: #0d72c7;
+	color: #12c;
 	text-decoration: none;
 }
 
@@ -534,6 +534,15 @@ ul.menu li.sfHover ul,
 .entry-content h1,
 .entry-content h2 {
 	clear: both;
+}
+
+.entry-content a,
+.entry-content a:visited {
+	text-decoration: underline;
+}
+
+.entry-content a:hover {
+	text-decoration: none;
 }
 
 blockquote {
@@ -692,11 +701,11 @@ h2 a:visited {
 
 h2 a,
 h2 a:visited {
-	color: #333;
+	color: #12c;
 }
 
 h2 a:hover {
-	color: #0d72c7;
+	color: #333;
 	text-decoration: none;
 }
 
@@ -773,6 +782,11 @@ h5 {
 	margin: -5px 0 15px;
 }
 
+.post-info a,
+.post-info a:visited {
+	color: #093;
+}
+
 
 /* Post Meta
 ------------------------------------------------------------ */
@@ -782,6 +796,11 @@ h5 {
 	clear: both;
 	font-size: 14px;
 	padding: 5px 0 0;
+}
+
+.post-meta a,
+.post-meta a:visited {
+	color: #093;
 }
 
 
@@ -1242,7 +1261,7 @@ input:hover[type="submit"] {
 }
 
 #footer a:hover {
-	color: #0d72c7;
+	color: #12c;
 	text-decoration: none;
 }
 
