@@ -83,3 +83,11 @@ function wpselect_after_post_content() {
 		) );
 	}
 }
+
+/** YARPP Related Posts */
+add_action( 'genesis_after_post_content', 'wpselect_related_posts', 9 );
+function wpselect_related_posts() {
+	if ( is_single() ) { 
+		if ( function_exists('related_posts') ) : related_posts(); endif;
+	}
+}
