@@ -524,7 +524,7 @@ ul.menu li.sfHover ul,
 
 #content-sidebar-wrap {
 	float: left;
-	width: 790px;
+	width: 82.50%;
 }
 
 .content-sidebar #content-sidebar-wrap,
@@ -545,12 +545,7 @@ ul.menu li.sfHover ul,
 #content {
 	background-color: #fff;
 	float: left;
-	width: 490px;
-}
-
-.content-sidebar #content,
-.sidebar-content #content {
-	width: 660px;
+	width: 70.84%;
 }
 
 .sidebar-content #content,
@@ -1011,15 +1006,16 @@ p.wp-caption-text {
 ------------------------------------------------------------ */
 
 .sidebar {
+	background-color: #fff;
 	display: inline;
 	float: right;
 	font-size: 14px;
-	width: 280px;
+	width: 27.09%;
 }
 
 #sidebar-alt {
 	float: left;
-	width: 150px;
+	width: 15.63%;
 }
 
 .sidebar-content #sidebar,
@@ -1036,8 +1032,6 @@ p.wp-caption-text {
 }
 
 .sidebar .widget {
-	background-color: #fff;
-	border: 1px solid #ddd;
 	margin: 0 0 15px;
 	padding: 0 0 15px;
 }
@@ -1229,7 +1223,6 @@ input:hover[type="submit"] {
 #footer-widgets .widget {
 	background: none;
 	border: none;
-	margin: 0 0 15px;
 	padding: 20px;
 }
 
@@ -1261,18 +1254,18 @@ input:hover[type="submit"] {
 
 .footer-widgets-1 {
 	float: left;
-	margin: 0 30px 0 0;
-	width: 300px;
+	margin: 0 2% 0 0;
+	width: 32%;
 }
 
 .footer-widgets-2 {
 	float: left;
-	width: 300px;
+	width: 32%;
 }
 
 .footer-widgets-3 {
 	float: right;
-	width: 300px;
+	width: 32%;
 }
 
 
@@ -1471,7 +1464,22 @@ div.gform_wrapper .gform_footer {
 /* Responsive Design
 ------------------------------------------------------------ */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
+
+	.archive-page,
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	.sidebar,
+	#content,
+	#content-sidebar-wrap,
+	#sidebar-alt {
+		width: 100%;
+	}
+	
+	#inner {
+		padding-bottom: 0px;
+	}
 
 	.five-sixths,
 	.four-fifths,
@@ -1492,6 +1500,14 @@ div.gform_wrapper .gform_footer {
 		width: 100%;
 	}
 
+	.menu li.right {
+		display: none;
+	}
+
+	.author-box {
+		margin: 0 20px 40px;
+	}
+
 }
 
 @media only screen and (max-width: 960px) {
@@ -1500,30 +1516,12 @@ div.gform_wrapper .gform_footer {
 		width: 100%;
 		margin: 0 auto;
 	}
-	
-	.archive-page,
-	.content-sidebar #content,
-	.content-sidebar-sidebar #content,
-	.footer-widgets-1,
-	.footer-widgets-2,
-	.footer-widgets-3,
-	.full-width-content #content,
-	.sidebar,
-	.sidebar-content #content,
-	.sidebar-content-sidebar #content,
-	.sidebar-sidebar-content #content,
+
 	.wrap,
-	#content-sidebar-wrap,
-	#footer .creds,
-	#footer .gototop,
-	#footer-widgets .wrap,
-	#header .widget-area,
-	#inner,
-	#sidebar-alt,
-	#title-area {
+	#inner {
 		width: 100%;
 	}
-	
+
 	#description,
 	#footer .creds,
 	#footer .gototop,
@@ -1533,6 +1531,7 @@ div.gform_wrapper .gform_footer {
 		float: none;
 		padding: 0;
 		text-align: center;
+		width: 100%;
 	}
 
 	#title-area {
@@ -1557,19 +1556,6 @@ div.gform_wrapper .gform_footer {
 
 	#header .s {
 		margin: 0 -7px 0 0;
-	}
-
-	.menu li.right {
-		display: none;
-	}
-
-	.sidebar .widget,
-	.taxonomy-description {
-		margin: 0 20px 20px;
-	}
-
-	.author-box {
-		margin: 0 20px 40px;
 	}
 
 }
