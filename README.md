@@ -4,6 +4,7 @@ Child Theme for Genesis Framework by [wpselect.com](http://wpselect.com/ "wpsele
 Changelog
 ---------
 
+* Responsive custom header image
 * Fun with color
 * Flexible Responsive Width
 * YARPP Related Posts template

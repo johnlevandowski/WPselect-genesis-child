@@ -185,6 +185,15 @@ body {
 	width: 100%;
 }
 
+#header .wrap {
+	background-position: center center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	min-height: 100px;
+}
+
 #title-area {
 	float: left;
 	overflow: hidden;
