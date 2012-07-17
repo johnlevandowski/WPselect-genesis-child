@@ -16,13 +16,13 @@ function add_viewport_meta_tag() {
 add_theme_support( 'custom-background' );
 
 /** Add support for custom header genesis/lib/structure/header.php */
-add_theme_support( 'genesis-custom-header', array( 'width' => 960, 'height' => 100, 'textcolor' => 'fff', 'header_callback' => 'wpselect_custom_header_style' ) );
+add_theme_support( 'custom-header', array( 'width' => 960, 'flex-height' => true, 'height' => 100, 'default-text-color' => 'fff', 'wp-head-callback' => 'wpselect_custom_header_style' ) );
 function wpselect_custom_header_style() {
 	/** If no options set, don't waste the output. Do nothing. */
 	if ( HEADER_TEXTCOLOR == get_header_textcolor() && HEADER_IMAGE == get_header_image() )
 		return;
 	/** Header image CSS */
-	$output = sprintf( '#header .wrap { background-image: url(%s); }', esc_url( get_header_image() ) );
+	$output = sprintf( '#header .wrap { background-image: url(%s); min-height: %spx }', esc_url( get_header_image() ), get_custom_header()->height );
 	/** Header text color CSS, if showing text */
 	if ( 'blank' != get_header_textcolor() )
 		$output .= sprintf( '#title a, #title a:hover, #description { color: #%s; }', esc_html( get_header_textcolor() ) );

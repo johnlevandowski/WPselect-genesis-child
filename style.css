@@ -1037,7 +1037,6 @@ p.wp-caption-text {
 	font-size: 14px;
 	overflow: hidden;
 	padding: 20px 20px;
-	width: 100%;
 }
 
 .navigation li {
@@ -1578,11 +1577,16 @@ div.gform_wrapper .gform_footer {
 		width: 100%;
 	}
 
+	.header-image #title,
+	.header-image #title a,
+	.header-image #title-area,
 	#description,
 	#footer .creds,
 	#footer .gototop,
 	#header .widget-area,
 	#title,
+	#title a,
+	#title a:hover,
 	#title-area {
 		float: none;
 		padding: 0;
@@ -1592,12 +1596,6 @@ div.gform_wrapper .gform_footer {
 
 	#title-area {
 		padding: 10px 0;
-	}
-
-	#description,
-	#title a,
-	#title a:hover {
-		padding: 0;
 	}
 
 	#header .widget-area {
