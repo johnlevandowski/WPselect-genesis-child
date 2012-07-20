@@ -4,6 +4,7 @@ Child Theme for Genesis Framework by [wpselect.com](http://wpselect.com/ "wpsele
 Changelog
 ---------
 
+* Post and social icons, YARPP template, font-family
 * Move secondary nav, add version to stylesheet, custom post-info, custom credits, post excerpt length and more link, lower jpeg quality of media
 * Responsive custom header image
 * Fun with color

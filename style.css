@@ -66,7 +66,7 @@
 /* Import Fonts
 ------------------------------------------------------------ */
 
-@import url(http://fonts.googleapis.com/css?family=Rokkitt);
+@import url(http://fonts.googleapis.com/css?family=Neuton);
 
 
 /* Defaults
@@ -202,7 +202,7 @@ body {
 }
 
 #title {
-	font-family: 'Rokkitt', 'Times New Roman', Times, serif;
+	font-family: 'Neuton', 'Times New Roman', Times, serif;
 	font-size: 34px;
 	line-height: 1.25;
 	margin: 0;
@@ -217,6 +217,7 @@ body {
 #description {
 	color: #fff;
 	font-size: 14px;
+	font-style: italic;
 }
 
 #header .widget-area {
@@ -474,15 +475,10 @@ ul.menu li.sfHover ul,
 	padding: 0 10px;
 }
 
-.menu li.rss a {
-	background: url(images/rss.png) no-repeat center left;
-	margin: 0 0 0 10px;
-	padding: 0 0 0 16px;
-}
-
+.menu li.rss a,
 .menu li.twitter a {
-	background: url(images/twitter-nav.png) no-repeat center left;
-	padding: 0 0 0 20px;
+	margin: 0 0 0 10px;
+	padding: 0;
 }
 
 
@@ -496,6 +492,7 @@ ul.menu li.sfHover ul,
 
 #subnav {
 	border-bottom: 1px solid #1b2615;
+	border-top: 1px solid #1b2615;
 }
 
 .menu-secondary a {
@@ -529,6 +526,45 @@ ul.menu li.sfHover ul,
 }
 
 
+/* Social Icons
+------------------------------------------------------------ */
+
+#subnav li.wpselect-social a,
+#subnav li.wpselect-social a:hover {
+	display: block;
+	height: 32px;
+	margin: 5px 7px;
+	padding: 0;
+	text-indent: -9999px;
+	width: 32px;
+}
+
+#subnav li.wpselect-social.facebook a,
+#subnav li.wpselect-social.facebook a:hover {
+	background: url(images/facebook.png);
+}
+
+#subnav li.wpselect-social.google-plus a,
+#subnav li.wpselect-social.google-plus a:hover {
+	background: url(images/gplus.png);
+}
+
+#subnav li.wpselect-social.linkedin a,
+#subnav li.wpselect-social.linkedin a:hover {
+	background: url(images/linkedin.png);
+}
+
+#subnav li.wpselect-social.rss a,
+#subnav li.wpselect-social.rss a:hover {
+	background: url(images/rss.png);
+}
+
+#subnav li.wpselect-social.twitter a,
+#subnav li.wpselect-social.twitter a:hover {
+	background: url(images/twitter.png);
+}
+
+
 /* Inner
 ------------------------------------------------------------ */
 
@@ -546,9 +582,10 @@ ul.menu li.sfHover ul,
 
 .breadcrumb {
 	background-color: #ebebeb;
-	font-family: 'Rokkitt', 'Times New Roman', Times, serif;
+	font-family: 'Neuton', 'Times New Roman', Times, serif;
 	font-size: 16px;
-	padding: 5px 10px 0;
+	line-height: 1.25;
+	padding: 10px;
 }
 
 
@@ -770,7 +807,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Rokkitt', 'Times New Roman', Times, serif;
+	font-family: 'Neuton', 'Times New Roman', Times, serif;
 	line-height: 1.25;
 	margin: 0 0 10px;
 }
@@ -817,7 +854,7 @@ h4 {
 .widget-area h4 {
 	background-color: #ebebeb;
 	font-size: 16px;
-	padding: 10px 10px 1px;
+	padding: 10px;
 }
 
 .widget-area h4 a {
@@ -939,11 +976,31 @@ h5 {
 /* Post Icons
 ------------------------------------------------------------ */
 
-.post-comments,
-.tags {
-	background: url(images/icon-dot.png) no-repeat left;
-	margin: 0 0 0 3px;
-	padding: 0 0 0 10px;
+.post-info .date {
+	background: url(images/date.png) no-repeat left center;
+	padding: 2px 0 0 22px;
+}
+
+.post-info .post-comments {
+	background: url(images/comment.png) no-repeat left center;
+	margin: 0 0 0 10px;
+	padding: 2px 0 0 22px;
+}
+
+.post-meta .categories {
+	background: url(images/category.png) no-repeat left center;
+	padding: 2px 0 0 22px;
+}
+
+.post-meta .tags {
+	background: url(images/tag.png) no-repeat left center;
+	margin: 0 0 0 10px;
+	padding: 2px 0 0 22px;
+}
+
+.yarpp h3 {
+	background: url(images/post.png) no-repeat left center;
+	padding: 0 0 0 22px;
 }
 
 
@@ -1592,6 +1649,21 @@ div.gform_wrapper .gform_footer {
 		padding: 0;
 		text-align: center;
 		width: 100%;
+	}
+
+	#header ul.menu,
+	#nav ul,
+	#subnav ul {
+		float: none;
+		text-align: center;
+	}
+
+	#header ul.menu li,
+	#nav li,
+	#nav li.right,
+	#subnav li {
+		display: inline-block;
+		float: none;
 	}
 
 	#title-area {
