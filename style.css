@@ -58,6 +58,7 @@
 * Comments
 * Gravity Forms
 * WPselect Widget Areas
+* WPselect Landing Page
 * Responsive Design
 
 */
@@ -968,8 +969,8 @@ h5 {
 
 .archive-page {
 	float: left;
-	padding: 20px 0 0;
-	width: 45%;
+	margin-right: 2%;
+	width: 47%;
 }
 
 
@@ -1573,12 +1574,46 @@ div.gform_wrapper .gform_footer {
 }
 
 
+/* WPselect Landing Page
+------------------------------------------------------------ */
+
+.wpselect-landing #inner,
+.wpselect-landing #header .wrap,
+.wpselect-landing #footer .wrap {
+	width: 750px;
+}
+
+.wpselect-landing #footer .creds,
+.wpselect-landing #footer .gototop,
+.wpselect-landing #title,
+.wpselect-landing #title a,
+.wpselect-landing #title a:hover,
+.wpselect-landing #title-area {
+	float: none;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+}
+
+.wpselect-landing #title-area {
+	padding: 5px 0;
+}
+
+.wpselect-landing #header,
+.wpselect-landing #header .wrap {
+	min-height: 52px;
+}
+
+
 /* Responsive Design
 ------------------------------------------------------------ */
 
 @media only screen and (max-width: 750px) {
 
 	.archive-page,
+	.wpselect-landing #inner,
+	.wpselect-landing #header .wrap,
+	.wpselect-landing #footer .wrap,
 	.footer-widgets-1,
 	.footer-widgets-2,
 	.footer-widgets-3,
@@ -1587,10 +1622,6 @@ div.gform_wrapper .gform_footer {
 	#content-sidebar-wrap,
 	#sidebar-alt {
 		width: 100%;
-	}
-	
-	#inner {
-		padding-bottom: 0px;
 	}
 
 	.five-sixths,
