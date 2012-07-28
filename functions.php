@@ -16,7 +16,7 @@ function add_viewport_meta_tag() {
 add_theme_support( 'custom-background' );
 
 /** Add support for custom header genesis/lib/structure/header.php */
-add_theme_support( 'custom-header', array( 'width' => 960, 'flex-height' => true, 'height' => 100, 'default-text-color' => 'fff', 'wp-head-callback' => 'wpselect_custom_header_style' ) );
+add_theme_support( 'custom-header', array( 'width' => 960, 'flex-height' => true, 'height' => 90, 'default-text-color' => 'fff', 'wp-head-callback' => 'wpselect_custom_header_style' ) );
 function wpselect_custom_header_style() {
 	/** If no options set, don't waste the output. Do nothing. */
 	if ( HEADER_TEXTCOLOR == get_header_textcolor() && HEADER_IMAGE == get_header_image() )
@@ -49,7 +49,7 @@ function wpselect_load_stylesheet() {
 add_filter( 'genesis_post_info', 'wpselect_post_info' );
 function wpselect_post_info($post_info) {
 if (!is_page()) {
-    $post_info = '[post_date] [post_edit] [post_comments]';
+    $post_info = '[post_date] [post_comments] [post_edit]';
     return $post_info;
 	}
 }

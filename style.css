@@ -95,11 +95,9 @@ textarea {
 	text-decoration: none;
 }
 
-blockquote,
 input,
 select,
 textarea,
-.author-box,
 .wp-caption {
 	background-color: #f5f5f5;
 	border: 1px solid #dcdbd6;
@@ -182,7 +180,7 @@ body {
 #header {
 	background-color: #171310;
 	margin: 0 auto;
-	min-height: 100px;
+	min-height: 90px;
 	width: 100%;
 }
 
@@ -192,13 +190,13 @@ body {
 	background-size: cover;
 	-moz-background-size: cover;
 	-webkit-background-size: cover;
-	min-height: 100px;
+	min-height: 90px;
 }
 
 #title-area {
 	float: left;
 	overflow: hidden;
-	padding: 17px 0 10px 20px;
+	padding: 10px 0 10px 20px;
 	width: 640px;
 }
 
@@ -236,7 +234,7 @@ body {
 .header-image #title a {
 	display: block;
 	float: left;
-	height: 100px;
+	height: 90px;
 	overflow: hidden;
 	padding: 0;
 	text-indent: -9999px;
@@ -530,8 +528,23 @@ ul.menu li.sfHover ul,
 /* Social Icons
 ------------------------------------------------------------ */
 
-#subnav li.wpselect-social a,
-#subnav li.wpselect-social a:hover {
+li.wpselect-social-email a,
+li.wpselect-social-email a:hover,
+li.wpselect-social-facebook a,
+li.wpselect-social-facebook a:hover,
+li.wpselect-social-flickr a,
+li.wpselect-social-flickr a:hover,
+li.wpselect-social-google-plus a,
+li.wpselect-social-google-plus a:hover,
+li.wpselect-social-linkedin a,
+li.wpselect-social-linkedin a:hover,
+li.wpselect-social-rss a,
+li.wpselect-social-rss a:hover,
+li.wpselect-social-twitter a,
+li.wpselect-social-twitter a:hover,
+li.wpselect-social-youtube a,
+li.wpselect-social-youtube a:hover {
+	background: url(images/wpselect-sprite.png) no-repeat left center;
 	display: block;
 	height: 32px;
 	margin: 5px 7px;
@@ -540,29 +553,68 @@ ul.menu li.sfHover ul,
 	width: 32px;
 }
 
-#subnav li.wpselect-social.facebook a,
-#subnav li.wpselect-social.facebook a:hover {
-	background: url(images/facebook.png);
+li.wpselect-social-email a {
+	background-position: 0 -170px;
 }
 
-#subnav li.wpselect-social.google-plus a,
-#subnav li.wpselect-social.google-plus a:hover {
-	background: url(images/gplus.png);
+li.wpselect-social-email a:hover {
+	background-position: -34px -170px;
 }
 
-#subnav li.wpselect-social.linkedin a,
-#subnav li.wpselect-social.linkedin a:hover {
-	background: url(images/linkedin.png);
+li.wpselect-social-facebook a {
+	background-position: 0 -68px;
 }
 
-#subnav li.wpselect-social.rss a,
-#subnav li.wpselect-social.rss a:hover {
-	background: url(images/rss.png);
+li.wpselect-social-facebook a:hover {
+	background-position: -34px -68px;
 }
 
-#subnav li.wpselect-social.twitter a,
-#subnav li.wpselect-social.twitter a:hover {
-	background: url(images/twitter.png);
+li.wpselect-social-flickr a {
+	background-position: 0 -204px;
+}
+
+li.wpselect-social-flickr a:hover {
+	background-position: -34px -204px;
+}
+
+li.wpselect-social-google-plus a {
+	background-position: 0 -102px;
+}
+
+li.wpselect-social-google-plus a:hover {
+	background-position: -34px -102px;
+}
+
+li.wpselect-social-linkedin a {
+	background-position: 0 -136px;
+}
+
+li.wpselect-social-linkedin a:hover {
+	background-position: -34px -136px;
+}
+
+li.wpselect-social-rss a {
+	background-position: 0 0;
+}
+
+li.wpselect-social-rss a:hover {
+	background-position: -34px 0;
+}
+
+li.wpselect-social-twitter a {
+	background-position: 0 -34px;
+}
+
+li.wpselect-social-twitter a:hover {
+	background-position: -34px -34px;
+}
+
+li.wpselect-social-youtube a {
+	background-position: 0 -238px;
+}
+
+li.wpselect-social-youtube a:hover {
+	background-position: -34px -238px;
 }
 
 
@@ -673,8 +725,8 @@ ul.menu li.sfHover ul,
 }
 
 blockquote {
-	background: url(images/blockquote.png) no-repeat;
-	border: none;
+	background: url(images/wpselect-sprite.png) no-repeat left center;
+	background-position: 0 -412px;
 	clear: both;
 	margin: 5px 5px 20px;
 	padding: 25px 30px 5px 70px;
@@ -978,29 +1030,34 @@ h5 {
 ------------------------------------------------------------ */
 
 .post-info .date {
-	background: url(images/date.png) no-repeat left center;
+	background: url(images/wpselect-sprite.png) no-repeat left center;
+	background-position: 0 -272px;
+	margin: 0 10px 0 0;
 	padding: 2px 0 0 22px;
 }
 
 .post-info .post-comments {
-	background: url(images/comment.png) no-repeat left center;
-	margin: 0 0 0 10px;
+	background: url(images/wpselect-sprite.png) no-repeat left center;
+	background-position: 0 -300px;
 	padding: 2px 0 0 22px;
 }
 
 .post-meta .categories {
-	background: url(images/category.png) no-repeat left center;
+	background: url(images/wpselect-sprite.png) no-repeat left center;
+	background-position: 0 -328px;
+	margin: 0 10px 0 0;
 	padding: 2px 0 0 22px;
 }
 
 .post-meta .tags {
-	background: url(images/tag.png) no-repeat left center;
-	margin: 0 0 0 10px;
+	background: url(images/wpselect-sprite.png) no-repeat left center;
+	background-position: 0 -356px;
 	padding: 2px 0 0 22px;
 }
 
 .yarpp h3 {
-	background: url(images/post.png) no-repeat left center;
+	background: url(images/wpselect-sprite.png) no-repeat left center;
+	background-position: 0 -380px;
 	padding: 0 0 0 22px;
 }
 
@@ -1275,18 +1332,37 @@ input:hover[type="submit"] {
 /* eNews and Update Widget
 ------------------------------------------------------------ */
 
-.enews p {
-	padding: 0 15px 5px;
+.enews-widget .widget-wrap {
+	background-color: #dcdbd6;
+	border: 4px solid #ebebeb;
+	margin: 10px 10px 0;
+	padding: 0;
 }
 
-.enews #subscribe {
-	padding: 0 0 0 15px;
+.enews {
+	background: url(images/enews-ribbon.png) no-repeat top left;
+	margin: -10px;
+	overflow: hidden;
+	padding: 40px 20px 30px;
+	text-align: center;
+}
+
+.enews h4 {
+	background-color: transparent;
+	color: #4f814b;
+	font-size: 20px;
+	margin: 0 40px;
+}
+
+.enews p {
+	margin: 10px 0;
 }
 
 .enews #subbox {
-	margin: 5px -7px 0 0;
+	margin: 10px 0;
+	max-width: 200px;
 	padding: 6px 5px;
-	width: 75%;
+	width: 94%;
 }
 
 
@@ -1553,22 +1629,26 @@ div.gform_wrapper .gform_footer {
 /* WPselect Widget Areas
 ------------------------------------------------------------ */
 
-.wpselect_before_content_sidebar_wrap .textwidget {
+.wpselect_before_content_sidebar_wrap .widget {
 	padding: 0 0 20px 0;
 	text-align: center;
 }
 
-.wpselect_after_post .textwidget {
+.wpselect_after_post .widget {
 	padding: 0 0 20px 0;
 	text-align: center;
 }
 
-.wpselect_before_post_content .textwidget {
+.wpselect_before_post_content .widget {
 	float: left;
 	padding: 0 25px 10px 0;
 }
 
-.wpselect_after_post_content .textwidget {
+.wpselect_before_post_content .textwidget {
+	padding: 0;
+}
+
+.wpselect_after_post_content .widget {
 	padding: 0 0 25px 0;
 	text-align: center;
 }
