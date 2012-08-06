@@ -6,6 +6,9 @@ require_once( get_template_directory() . '/lib/init.php' );
 define( 'CHILD_THEME_NAME', 'WPselect' );
 define( 'CHILD_THEME_URL', 'http://wpselect.com/' );
 
+// Child Theme Settings
+include_once( CHILD_DIR . '/lib/child-theme-settings.php');
+
 /** Add Viewport meta tag for mobile browsers */
 add_action( 'genesis_meta', 'add_viewport_meta_tag' );
 function add_viewport_meta_tag() {
@@ -80,6 +83,26 @@ function wpselect_excerpt_more($more) {
 add_filter( 'jpeg_quality', 'wpselect_jpeg_quality' );
 function wpselect_jpeg_quality( $quality ) {
 	return (int)79;
+}
+
+/** Customize the search text genesis/lib/structure/search.php */
+add_filter( 'genesis_search_text', 'wpselect_genesis_search_text');
+function wpselect_genesis_search_text() {
+	return esc_attr('Google Search ...');
+}
+
+/** Customize the search form genesis/lib/structure/search.php */
+add_filter( 'genesis_search_form', 'wpselect_genesis_search_form', 10, 4);
+function wpselect_genesis_search_form( $form, $search_text, $button_text, $label ) {
+	$onfocus = " onfocus=\"if (this.value == '$search_text') {this.value = '';}\"";
+	$onblur  = " onblur=\"if (this.value == '') {this.value = '$search_text';}\"";
+	$form = '
+		<form method="get" class="searchform" action="' . home_url() . '/google-cse/" >' . $label . '
+		<input type="text" value="' . $search_text . '" name="q" class="s"' . $onfocus . $onblur . ' />
+		<input type="submit" name="submit" class="searchsubmit" value="' . $button_text . '" />
+		</form>
+	';
+	return $form;
 }
 
 /** Before Content Sidebar Wrap Widget */
