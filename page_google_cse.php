@@ -18,7 +18,7 @@ add_action('genesis_meta', 'wpselect_google_cse_meta');
 function wpselect_google_cse_meta() { ?>
 <script type="text/javascript">
   (function() {
-    var cx = '<?php echo esc_attr( genesis_get_option('wpselect-google-cse-id', 'wpselect-child-settings') ); ?>';
+    var cx = '<?php echo esc_attr( genesis_get_option('google-cse-id', 'wpselect-child-theme-settings') ); ?>';
     var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
     gcse.src = (document.location.protocol == 'https' ? 'https:' : 'http:') +
         '//www.google.com/cse/cse.js?cx=' + cx;

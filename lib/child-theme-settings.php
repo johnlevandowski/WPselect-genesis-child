@@ -1,101 +1,133 @@
 <?php
 /**
- * Child Theme Settings
- */ 
+ * Creates the Child Theme Settings page.
+ * genesis/lib/admin/seo-settings.php
+ */
 
 /**
  * Registers a new admin page, providing content and corresponding menu item
  * for the Child Theme Settings page.
  */
-class Child_Theme_Settings extends Genesis_Admin_Boxes {
+
+// Specify a class
+class WPselect_Child_Theme_Settings extends Genesis_Admin_Boxes {
 
 	/**
 	 * Create an admin menu item and settings page.
 	 */
 	function __construct() {
 
-		// Specify a unique page ID. 
-		$page_id = 'wpselect-child';
+		// Specify a page_id
+		$page_id = 'wpselect-settings';
 
-		// Set it as a child to genesis, and define the menu and page titles
+		// Specify a page_title and menu_title
 		$menu_ops = array(
 			'submenu' => array(
 				'parent_slug' => 'genesis',
-				'page_title'  => 'Genesis - Child Theme Settings',
-				'menu_title'  => 'Child Theme Settings',
+				'page_title'  => __( 'Child Theme Settings', 'genesis' ),
+				'menu_title'  => __( 'Child Theme Settings', 'genesis' )
 			)
 		);
 
-		// Set up page options. These are optional, so only uncomment if you want to change the defaults
 		$page_ops = array(
-		//	'screen_icon'       => 'options-general',
-		//	'save_button_text'  => 'Save Settings',
-		//	'reset_button_text' => 'Reset Settings',
-		//	'save_notice_text'  => 'Settings saved.',
-		//	'reset_notice_text' => 'Settings reset.',
-		);		
-
-		// Give it a unique settings field. 
-		// You'll access them from genesis_get_option( 'option_name', 'child-settings' );
-		$settings_field = 'wpselect-child-settings';
-
-		// Set the default values
-		$default_settings = array(
-			'wpselect-google-cse-id'   => '',
+			'screen_icon'       => 'options-general',
+			'save_button_text'  => __( 'Save Settings', 'genesis' ),
+			'reset_button_text' => __( 'Reset Settings', 'genesis' ),
+			'saved_notice_text' => __( 'Settings saved.', 'genesis' ),
+			'reset_notice_text' => __( 'Settings reset.', 'genesis' ),
+			'error_notice_text' => __( 'Error saving settings.', 'genesis' ),
 		);
 
-		// Create the Admin Page
+		// Specify a settings field
+		// used by genesis_get_option( 'option_name', 'settings_field')
+		$settings_field = 'wpselect-child-theme-settings';
+
+		// Set default values for options
+		$default_settings = array(
+			'google-cse-id' => '',
+		);
+
 		$this->create( $page_id, $menu_ops, $page_ops, $settings_field, $default_settings );
 
-		// Initialize the Sanitization Filter
-		add_action( 'genesis_settings_sanitizer_init', array( $this, 'sanitization_filters' ) );
+		add_action( 'genesis_settings_sanitizer_init', array( $this, 'sanitizer_filters' ) );
 
 	}
 
-	/** 
-	 * Set up Sanitization Filters
-	 */	
-	function sanitization_filters() {
+	/**
+	 * Registers each of the settings with a sanitization filter type.
+	 */
+	public function sanitizer_filters() {
 
-		genesis_add_option_filter( 'no_html', $this->settings_field,
+		genesis_add_option_filter(
+			'no_html',
+			$this->settings_field,
 			array(
-				'wpselect-google-cse-id',
-			) );
+				'google-cse-id',
+			)
+		);
+
 	}
 
+	/**
+ 	 * Register meta boxes on the Child Theme Settings page.
+ 	 */
+	function metaboxes() {
+
+		add_meta_box( 'wpselect-google-cse-settings', __( 'Google Custom Search Engine', 'genesis' ), array( $this, 'wpselect_google_cse_settings_box' ), $this->pagehook, 'main' );
+
+	}
+
+	/**
+	 * Callback for meta box.
+	 */
+	function wpselect_google_cse_settings_box() {
+		?>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'google-cse-id' ); ?>"><?php _e( 'Search engine unique ID:', 'genesis' ); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name( 'google-cse-id' ); ?>" value="<?php echo esc_attr( $this->get_field_value( 'google-cse-id' ) ); ?>" size="40" />
+		</p>
+		<p>
+			<span class="description"><?php printf( __( 'Create a <a href="%s">Page</a> with a permalink of <a href="%s">%s</a> and apply the <code>Google Custom Search</code> template.', 'genesis' ), admin_url('edit.php?post_type=page'), home_url('/google-cse/'), home_url('/google-cse/') ); ?></span>
+		</p>
+
+		<?php
+	}
+	
 	/**
 	 * Set up Help Tab
+	 * http://codex.wordpress.org/Function_Reference/add_help_tab
+	 * genesis/lib/classes/admin.php
 	 */
-	 function help() {
-	 	$screen = get_current_screen();
-
-		$screen->add_help_tab( array(
-			'id'      => 'sample-help', 
-			'title'   => 'Sample Help',
+	function help() {
+		$screen = get_current_screen();
+		
+		$screen->add_help_tab( array( 
+			'id'      => 'wpselect-help-id',
+			'title'   => 'Child Theme Help',
 			'content' => '<p>Help content goes here.</p>',
 		) );
-	 }
-
-	/**
-	 * Register metaboxes on Child Theme Settings page
-	 */
-	function metaboxes() {
-		add_meta_box('wpselect-cse-settings', 'Google Custom Search', array( $this, 'wpselect_cse_settings_box' ), $this->pagehook, 'main', 'high');
-	}
-
-	function wpselect_cse_settings_box() {
-		echo '<p><label for="' . $this->get_field_name( 'wpselect-google-cse-id' ) . '">Search engine unique ID:</label><br />';
-		echo '<input type="text" name="' . $this->get_field_name( 'wpselect-google-cse-id' ) . '" id="' . $this->get_field_id( 'wpselect-google-cse-id' ) . '"  value="' . esc_attr($this->get_field_value( 'wpselect-google-cse-id' ) ) . '" size="50" /></p>';
-		echo '<p><span class="description">Create a <a href="' . admin_url( 'edit.php?post_type=page' ) . '">Page</a> with a permalink of <a href="' . home_url('/google-cse/') . '">' . home_url('/google-cse/') . '</a> and apply the <code>Google Custom Search</code> template.</span></p>';
 	}
 
 }
 
-add_action( 'genesis_admin_menu', 'wpselect_add_child_theme_settings' );
 /**
- * Add the Theme Settings Page
+ * Adds submenu items under Genesis item in admin menu.
+ * genesis/lib/admin/menu.php
  */
-function wpselect_add_child_theme_settings() {
-	global $_child_theme_settings;
-	$_child_theme_settings = new Child_Theme_Settings;	 	
+add_action( 'genesis_admin_menu', 'wpselect_add_admin_submenus' );
+function wpselect_add_admin_submenus() {
+
+	/** Do nothing, if not viewing the admin */
+	if ( ! is_admin() )
+		return;
+
+	/** Don't add submenu items if Genesis menu is disabled */
+	if( ! current_theme_supports( 'genesis-admin-menu' ) )
+		return;
+
+	/** Add submenu item using new class */
+	global $_wpselect_child_theme_settings;
+	$_wpselect_child_theme_settings = new WPselect_Child_Theme_Settings;
+
 }
