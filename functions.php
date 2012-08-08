@@ -39,13 +39,20 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_before_header', 'genesis_do_subnav' );
 
-/** Add version number to stylesheet genesis/lib/structure/layout.php */
+/** Remove default stylesheet genesis/lib/structure/layout.php
+  * Add minified stylesheet with version number
+  */
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
 add_action( 'genesis_meta', 'wpselect_load_stylesheet' );
 function wpselect_load_stylesheet() {
-	/** Show Child Info */
-	$child_info = wp_get_theme() ;
-	echo '<link rel="stylesheet" href="' . get_bloginfo( 'stylesheet_url' ) . '?ver=' . esc_attr( $child_info['Version'] ) . '" type="text/css" media="screen" />'."\n";
+	$child_info = wp_get_theme();
+	wp_register_style(
+		'wpselect-style',
+		get_stylesheet_directory_uri() . '/style-min.css',
+		false,
+		esc_attr( $child_info->Version )
+	);
+	wp_enqueue_style( 'wpselect-style' );
 }
 
 /** Customize the post info function genesis/lib/structure/post.php */
