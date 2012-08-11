@@ -12,6 +12,9 @@ include_once( CHILD_DIR . '/lib/child-theme-settings.php');
 /** Child Theme Widget Areas */
 include_once( CHILD_DIR . '/lib/child-widgetize.php');
 
+/** Child Theme Custom Post Content Functions */
+include_once( CHILD_DIR . '/lib/child-post.php');
+
 /** Add Viewport meta tag for mobile browsers */
 add_action( 'genesis_meta', 'add_viewport_meta_tag' );
 function add_viewport_meta_tag() {
@@ -135,7 +138,7 @@ function wpselect_genesis_search_form( $form, $search_text, $button_text, $label
 	$onfocus = " onfocus=\"if (this.value == '$search_text') {this.value = '';}\"";
 	$onblur  = " onblur=\"if (this.value == '') {this.value = '$search_text';}\"";
 	$form = '
-		<form method="get" class="searchform" action="' . home_url() . '/google-cse/" >' . $label . '
+		<form method="get" class="searchform" action="' . esc_attr( genesis_get_option('google-cse-url', 'wpselect-child-theme-settings') ) . '" >' . $label . '
 		<input type="text" value="' . $search_text . '" name="q" class="s"' . $onfocus . $onblur . ' />
 		<input type="submit" name="submit" class="searchsubmit" value="' . $button_text . '" />
 		</form>

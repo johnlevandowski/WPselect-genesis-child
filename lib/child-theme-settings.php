@@ -45,6 +45,7 @@ class WPselect_Child_Theme_Settings extends Genesis_Admin_Boxes {
 		// Set default values for options
 		$default_settings = array(
 			'google-cse-id' => '009034775234597001862:WMX2724661',
+			'google-cse-url' => home_url('/google-cse/'),
 			'credits-text' => 'Powered by <a title="Genesis Framework" href="http://www.studiopress.com/themes/genesis">Genesis</a>, <a title="Hosting by HostGator" href="http://wpselect.com/go/hostgator/">HostGator</a>, [footer_wordpress_link] and [wpselect_page_stats]
 
 Copyright [footer_copyright] · <a title="Privacy Policy" href="/privacy-policy/">Privacy Policy</a> · <a title="Disclaimer" href="/disclaimer/">Disclaimer</a> · <a title="FTC Disclosure" href="/ftc-disclosure/">FTC Disclosure</a> · <a title="Image Attribution" href="/image-attribution/">Image Attribution</a>',
@@ -67,6 +68,7 @@ Copyright [footer_copyright] · <a title="Privacy Policy" href="/privacy-policy/
 			$this->settings_field,
 			array(
 				'google-cse-id',
+				'google-cse-url',
 			)
 		);
 		
@@ -103,7 +105,11 @@ Copyright [footer_copyright] · <a title="Privacy Policy" href="/privacy-policy/
 			<input type="text" name="<?php echo $this->get_field_name( 'google-cse-id' ); ?>" id="<?php echo $this->get_field_id( 'google-cse-id' ); ?>" value="<?php echo esc_attr( $this->get_field_value( 'google-cse-id' ) ); ?>" size="40" />
 		</p>
 		<p>
-			<span class="description"><?php printf( __( 'Create a <a href="%s">Page</a> with a permalink of <a href="%s">%s</a> and apply the <code>Google Custom Search</code> template.', 'genesis' ), admin_url('edit.php?post_type=page'), home_url('/google-cse/'), home_url('/google-cse/') ); ?></span>
+			<label for="<?php echo $this->get_field_id( 'google-cse-url' ); ?>"><?php _e( 'Google results page URL:', 'genesis' ); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name( 'google-cse-url' ); ?>" id="<?php echo $this->get_field_id( 'google-cse-url' ); ?>" value="<?php echo esc_attr( $this->get_field_value( 'google-cse-url' ) ); ?>" size="40" />
+		</p>
+		<p>
+			<span class="description"><?php printf( __( 'Create a <a href="%s">Page</a> with a permalink of the google results page URL above and apply the <code>Google Custom Search</code> template.', 'genesis' ), admin_url('edit.php?post_type=page') ); ?></span>
 		</p>
 
 		<?php

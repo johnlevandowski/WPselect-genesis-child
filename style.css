@@ -37,6 +37,7 @@
 * Featured Post Grid
 * Headlines
 * Ordered / Unordered Lists
+* Tables
 * Post Info
 * Post Meta
 * Author Box
@@ -538,6 +539,8 @@ li.wpselect-social-google-plus a,
 li.wpselect-social-google-plus a:hover,
 li.wpselect-social-linkedin a,
 li.wpselect-social-linkedin a:hover,
+li.wpselect-social-pinterest a,
+li.wpselect-social-pinterest a:hover,
 li.wpselect-social-rss a,
 li.wpselect-social-rss a:hover,
 li.wpselect-social-twitter a,
@@ -591,6 +594,14 @@ li.wpselect-social-linkedin a {
 
 li.wpselect-social-linkedin a:hover {
 	background-position: -34px -136px;
+}
+
+li.wpselect-social-pinterest a {
+	background-position: 0 -272px;
+}
+
+li.wpselect-social-pinterest a:hover {
+	background-position: -34px -272px;
 }
 
 li.wpselect-social-rss a {
@@ -726,7 +737,7 @@ li.wpselect-social-youtube a:hover {
 
 blockquote {
 	background: url(images/wpselect-sprite.png) no-repeat left center;
-	background-position: 0 -412px;
+	background-position: 0 -446px;
 	clear: both;
 	margin: 5px 5px 20px;
 	padding: 25px 30px 5px 70px;
@@ -953,6 +964,32 @@ h5 {
 }
 
 
+/* Tables
+------------------------------------------------------------ */
+
+.entry-content table {
+	border-bottom: 1px solid #dcdbd6;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 0 0 25px;
+	width: 100%;
+}
+
+.entry-content th {
+	font-style: normal;
+	font-weight: bold;
+	margin: 0;
+	padding: 4px 10px 4px 0;
+	text-align: left;
+}
+
+.entry-content td {
+	border-top: 1px solid #dcdbd6;
+	margin: 0;
+	padding: 4px 10px 4px 0;
+}
+
+
 /* Post Info
 ------------------------------------------------------------ */
 
@@ -1031,33 +1068,33 @@ h5 {
 
 .post-info .date {
 	background: url(images/wpselect-sprite.png) no-repeat left center;
-	background-position: 0 -272px;
+	background-position: 0 -306px;
 	margin: 0 10px 0 0;
 	padding: 2px 0 0 22px;
 }
 
 .post-info .post-comments {
 	background: url(images/wpselect-sprite.png) no-repeat left center;
-	background-position: 0 -300px;
+	background-position: 0 -334px;
 	padding: 2px 0 0 22px;
 }
 
 .post-meta .categories {
 	background: url(images/wpselect-sprite.png) no-repeat left center;
-	background-position: 0 -328px;
+	background-position: 0 -362px;
 	margin: 0 10px 0 0;
 	padding: 2px 0 0 22px;
 }
 
 .post-meta .tags {
 	background: url(images/wpselect-sprite.png) no-repeat left center;
-	background-position: 0 -356px;
+	background-position: 0 -390px;
 	padding: 2px 0 0 22px;
 }
 
 .yarpp h3 {
 	background: url(images/wpselect-sprite.png) no-repeat left center;
-	background-position: 0 -380px;
+	background-position: 0 -414px;
 	padding: 0 0 0 22px;
 }
 
@@ -1501,7 +1538,7 @@ input:hover[type="submit"] {
 	float: right;
 	padding-right: 20px;
 	text-align: right;
-	width: 650px;
+	width: 700px;
 }
 
 
