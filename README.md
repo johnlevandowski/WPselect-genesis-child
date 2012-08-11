@@ -4,6 +4,7 @@ Child Theme for Genesis Framework by [wpselect.com](http://wpselect.com/ "wpsele
 Changelog
 ---------
 
+* Custom credits text in footer with theme settings
 * Minify stylesheet with version number
 * Google Custom Search and 404 templates
 * CSS image sprite, eNews widget style, header height

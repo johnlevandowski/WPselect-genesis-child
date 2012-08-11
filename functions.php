@@ -6,8 +6,11 @@ require_once( get_template_directory() . '/lib/init.php' );
 define( 'CHILD_THEME_NAME', 'WPselect' );
 define( 'CHILD_THEME_URL', 'http://wpselect.com/' );
 
-// Child Theme Settings
+/** Child Theme Settings */
 include_once( CHILD_DIR . '/lib/child-theme-settings.php');
+
+/** Child Theme Widget Areas */
+include_once( CHILD_DIR . '/lib/child-widgetize.php');
 
 /** Add Viewport meta tag for mobile browsers */
 add_action( 'genesis_meta', 'add_viewport_meta_tag' );
@@ -18,7 +21,10 @@ function add_viewport_meta_tag() {
 /** Add support for custom background */
 add_theme_support( 'custom-background' );
 
-/** Add support for custom header genesis/lib/structure/header.php */
+/**
+ * Add support for custom header
+ * genesis/lib/structure/header.php
+ */
 add_theme_support( 'custom-header', array( 'width' => 960, 'flex-height' => true, 'height' => 90, 'default-text-color' => 'fff', 'wp-head-callback' => 'wpselect_custom_header_style' ) );
 function wpselect_custom_header_style() {
 	/** If no options set, don't waste the output. Do nothing. */
@@ -39,23 +45,27 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_before_header', 'genesis_do_subnav' );
 
-/** Remove default stylesheet genesis/lib/structure/layout.php
-  * Add minified stylesheet with version number
-  */
+/**
+ * Remove default stylesheet
+ * Add minified stylesheet with version number
+ * genesis/lib/structure/layout.php
+ */
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
 add_action( 'genesis_meta', 'wpselect_load_stylesheet' );
 function wpselect_load_stylesheet() {
-	$child_info = wp_get_theme();
 	wp_register_style(
 		'wpselect-style',
-		get_stylesheet_directory_uri() . '/style-min.css',
+		CHILD_URL . '/style-min.css',
 		false,
-		esc_attr( $child_info->Version )
+		filemtime( CHILD_DIR . '/style-min.css' )
 	);
 	wp_enqueue_style( 'wpselect-style' );
 }
 
-/** Customize the post info function genesis/lib/structure/post.php */
+/**
+ * Customize the post info function
+ * genesis/lib/structure/post.php
+ */
 add_filter( 'genesis_post_info', 'wpselect_post_info' );
 function wpselect_post_info($post_info) {
 if (!is_page()) {
@@ -64,12 +74,27 @@ if (!is_page()) {
 	}
 }
 
-/** Customize the credits genesis/lib/structure/footer.php */
+/**
+ * Shortcode to display number of MySQL queries and time to generate page
+ */
+add_shortcode( 'wpselect_page_stats', 'wpselect_page_stats_shortcode' );
+function wpselect_page_stats_shortcode( $atts ) {
+	$defaults = array(
+		'after'  => '',
+		'before' => '',
+	);
+	$atts = shortcode_atts( $defaults, $atts );
+	$output = $atts['before'] . get_num_queries() . ' MySQL queries in ' . timer_stop($display = 0, $precision = 2) . ' seconds' . $atts['after'];
+	return $output;
+}
+
+/**
+ * Customize the credits
+ * genesis/lib/structure/footer.php
+ */
 add_filter('genesis_footer_creds_text', 'wpselect_footer_creds_text');
 function wpselect_footer_creds_text($creds_text) {
-	$creds_text = 'Powered by <a href="http://www.studiopress.com/themes/genesis" title="Genesis Framework">Genesis</a>, <a href="http://wpselect.com/go/hostgator/" title="Hosting by HostGator">HostGator</a>, [footer_wordpress_link] and ';
-	$creds_text .= get_num_queries(). ' MySQL queries in ' . timer_stop($display = 0, $precision = 2) . ' seconds<br />';
-	$creds_text .= 'Copyright [footer_copyright] &middot; <a href="/privacy-policy/" title="Privacy Policy">Privacy Policy</a> &middot; <a href="/disclaimer/" title="Disclaimer">Disclaimer</a> &middot; <a href="/ftc-disclosure/" title="FTC Disclosure">FTC Disclosure</a> &middot; <a href="/image-attribution/" title="Image Attribution">Image Attribution</a>';
+	$creds_text = wpautop( genesis_get_option('credits-text', 'wpselect-child-theme-settings') );
 	return $creds_text;
 }
 
@@ -92,13 +117,19 @@ function wpselect_jpeg_quality( $quality ) {
 	return (int)79;
 }
 
-/** Customize the search text genesis/lib/structure/search.php */
+/**
+ * Customize the search text
+ * genesis/lib/structure/search.php
+ */
 add_filter( 'genesis_search_text', 'wpselect_genesis_search_text');
 function wpselect_genesis_search_text() {
 	return esc_attr('Google Search ...');
 }
 
-/** Customize the search form genesis/lib/structure/search.php */
+/**
+ * Customize the search form
+ * genesis/lib/structure/search.php
+ */
 add_filter( 'genesis_search_form', 'wpselect_genesis_search_form', 10, 4);
 function wpselect_genesis_search_form( $form, $search_text, $button_text, $label ) {
 	$onfocus = " onfocus=\"if (this.value == '$search_text') {this.value = '';}\"";
@@ -110,69 +141,6 @@ function wpselect_genesis_search_form( $form, $search_text, $button_text, $label
 		</form>
 	';
 	return $form;
-}
-
-/** Before Content Sidebar Wrap Widget */
-genesis_register_sidebar( array(
-	'id'			=> 'wpselect_before_content_sidebar_wrap',
-	'name'			=> __( 'Before Content Sidebar Wrap', 'genesis' ),
-	'description'	=> __( 'Displays on all pages except single posts', 'genesis' ),
-) );
-add_action( 'genesis_before_content_sidebar_wrap', 'wpselect_before_content_sidebar_wrap' );
-function wpselect_before_content_sidebar_wrap() {
-	if ( !is_single() ) {
-		genesis_widget_area( 'wpselect_before_content_sidebar_wrap', array(
-		'before' => '<div class="wpselect_before_content_sidebar_wrap widget-area">',
-		) );
-	}
-}
-
-/** After Post Widget */
-genesis_register_sidebar( array(
-	'id'			=> 'wpselect_after_post',
-	'name'			=> __( 'After First Post', 'genesis' ),
-	'description'	=> __( 'Displays on archive pages after first post', 'genesis' ),
-) );
-add_action( 'genesis_after_post', 'wpselect_after_post' );
-function wpselect_after_post() {
-	global $loop_counter;
-	if ( !is_singular() ) {
-		if ( $loop_counter == 0) {
-			genesis_widget_area( 'wpselect_after_post', array(
-			'before' => '<div class="wpselect_after_post widget-area">',
-			) );
-		}
-	}
-}
-
-/** Before Post Content Widget */
-genesis_register_sidebar( array(
-	'id'			=> 'wpselect_before_post_content',
-	'name'			=> __( 'Before Post Content', 'genesis' ),
-	'description'	=> __( 'Displays on single posts before content', 'genesis' ),
-) );
-add_action( 'genesis_before_post_content', 'wpselect_before_post_content' );
-function wpselect_before_post_content() {
-	if ( is_single() ) {
-		genesis_widget_area( 'wpselect_before_post_content', array(
-		'before' => '<div class="wpselect_before_post_content widget-area">',
-		) );
-	}
-}
-
-/** After Post Content Widget */
-genesis_register_sidebar( array(
-	'id'			=> 'wpselect_after_post_content',
-	'name'			=> __( 'After Post Content', 'genesis' ),
-	'description'	=> __( 'Displays on single posts after content', 'genesis' ),
-) );
-add_action( 'genesis_after_post_content', 'wpselect_after_post_content', 1 );
-function wpselect_after_post_content() {
-	if ( is_single() ) {
-		genesis_widget_area( 'wpselect_after_post_content', array(
-		'before' => '<div class="wpselect_after_post_content widget-area">',
-		) );
-	}
 }
 
 /** YARPP Related Posts */
