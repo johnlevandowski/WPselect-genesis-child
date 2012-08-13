@@ -44,11 +44,12 @@ class WPselect_Child_Theme_Settings extends Genesis_Admin_Boxes {
 
 		// Set default values for options
 		$default_settings = array(
-			'google-cse-id' => '009034775234597001862:WMX2724661',
-			'google-cse-url' => home_url('/google-cse/'),
-			'credits-text' => 'Powered by <a title="Genesis Framework" href="http://www.studiopress.com/themes/genesis">Genesis</a>, <a title="Hosting by HostGator" href="http://wpselect.com/go/hostgator/">HostGator</a>, [footer_wordpress_link] and [wpselect_page_stats]
+			'google-cse-activate' => 1,
+			'google-cse-id'       => '009034775234597001862:WMX2724661',
+			'google-cse-url'      => home_url('/google-cse/'),
+			'credits-text'        => 'Powered by <a title="Genesis Framework" href="http://www.studiopress.com/themes/genesis">Genesis</a>, <a title="Hosting by HostGator" href="http://wpselect.com/go/hostgator/">HostGator</a>, [footer_wordpress_link] and [wpselect_page_stats]
 
-Copyright [footer_copyright] · <a title="Privacy Policy" href="/privacy-policy/">Privacy Policy</a> · <a title="Disclaimer" href="/disclaimer/">Disclaimer</a> · <a title="FTC Disclosure" href="/ftc-disclosure/">FTC Disclosure</a> · <a title="Image Attribution" href="/image-attribution/">Image Attribution</a>',
+Copyright [footer_copyright] &middot; <a title="Privacy Policy" href="/privacy-policy/">Privacy Policy</a> &middot; <a title="Disclaimer" href="/disclaimer/">Disclaimer</a> &middot; <a title="FTC Disclosure" href="/ftc-disclosure/">FTC Disclosure</a> &middot; <a title="Image Attribution" href="/image-attribution/">Image Attribution</a>',
 		);
 
 		$this->create( $page_id, $menu_ops, $page_ops, $settings_field, $default_settings );
@@ -63,6 +64,14 @@ Copyright [footer_copyright] · <a title="Privacy Policy" href="/privacy-policy/
 	public function sanitizer_filters() {
 
 		// Specify sanitization filter for options
+		genesis_add_option_filter(
+			'one_zero',
+			$this->settings_field,
+			array(
+				'google-cse-activate',
+			)
+		);
+		
 		genesis_add_option_filter(
 			'no_html',
 			$this->settings_field,
@@ -101,6 +110,10 @@ Copyright [footer_copyright] · <a title="Privacy Policy" href="/privacy-policy/
 		?>
 
 		<p>
+			<input type="checkbox" name="<?php echo $this->get_field_name( 'google-cse-activate' ); ?>" id="<?php echo $this->get_field_id( 'google-cse-activate' ); ?>" value="1" <?php checked( $this->get_field_value( 'google-cse-activate' ) ); ?> />
+			<label for="<?php echo $this->get_field_id( 'google-cse-activate' ); ?>"><?php _e( 'Activate Google Custom Search Engine', 'genesis' ); ?></label>
+		</p>
+		<p>
 			<label for="<?php echo $this->get_field_id( 'google-cse-id' ); ?>"><?php _e( 'Search engine unique ID:', 'genesis' ); ?></label>
 			<input type="text" name="<?php echo $this->get_field_name( 'google-cse-id' ); ?>" id="<?php echo $this->get_field_id( 'google-cse-id' ); ?>" value="<?php echo esc_attr( $this->get_field_value( 'google-cse-id' ) ); ?>" size="40" />
 		</p>
@@ -109,7 +122,7 @@ Copyright [footer_copyright] · <a title="Privacy Policy" href="/privacy-policy/
 			<input type="text" name="<?php echo $this->get_field_name( 'google-cse-url' ); ?>" id="<?php echo $this->get_field_id( 'google-cse-url' ); ?>" value="<?php echo esc_attr( $this->get_field_value( 'google-cse-url' ) ); ?>" size="40" />
 		</p>
 		<p>
-			<span class="description"><?php printf( __( 'Create a <a href="%s">Page</a> with a permalink of the google results page URL above and apply the <code>Google Custom Search</code> template.', 'genesis' ), admin_url('edit.php?post_type=page') ); ?></span>
+			<span class="description"><?php printf( __( 'Create a <a href="%s">Page</a> with a permalink of the google results page URL above and apply the <code>Google Custom Search</code> page template.', 'genesis' ), admin_url('edit.php?post_type=page') ); ?></span>
 		</p>
 
 		<?php
@@ -121,12 +134,6 @@ Copyright [footer_copyright] · <a title="Privacy Policy" href="/privacy-policy/
 				'textarea_rows' => 8
 				)
 			);
-		?>
-		<p>
-			<span class="description"><?php _e( 'Safe HTML and WordPress Shortcodes allowed.', 'genesis' ); ?></span>
-		</p>
-
-		<?php
 	}
 	
 	/**
@@ -139,9 +146,15 @@ Copyright [footer_copyright] · <a title="Privacy Policy" href="/privacy-policy/
 
 		// Specify id, title, and content		
 		$screen->add_help_tab( array( 
-			'id'      => 'wpselect-help-id',
-			'title'   => 'Child Theme Help',
-			'content' => '<p>Help content goes here.</p>',
+			'id'      => 'wpselect-help-google-cse',
+			'title'   => 'Google Custom Search',
+			'content' => '<h2>Google Custom Search</h2><p>Create and configure your google custom search engine with google and then activate.<br />Choose the <strong>Results only</strong> layout when setting up your google custom search engine.<br /><a href="http://www.google.com/cse/" target="_blank">http://www.google.com/cse/</a></p>',
+		) );
+		
+		$screen->add_help_tab( array( 
+			'id'      => 'wpselect-help-credits-text',
+			'title'   => 'Footer Credits',
+			'content' => '<h2>Footer Credits</h2><p>Displayed in the footer of your theme on the right.<br />Typically used to display copyright information.<br />Safe HTML and WordPress Shortcodes are allowed.</p>',
 		) );
 	}
 

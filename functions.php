@@ -120,30 +120,34 @@ function wpselect_jpeg_quality( $quality ) {
 	return (int)79;
 }
 
-/**
- * Customize the search text
- * genesis/lib/structure/search.php
- */
-add_filter( 'genesis_search_text', 'wpselect_genesis_search_text');
-function wpselect_genesis_search_text() {
-	return esc_attr('Google Search ...');
-}
+if ( genesis_get_option('google-cse-activate', 'wpselect-child-theme-settings') == 1 ) {
 
-/**
- * Customize the search form
- * genesis/lib/structure/search.php
- */
-add_filter( 'genesis_search_form', 'wpselect_genesis_search_form', 10, 4);
-function wpselect_genesis_search_form( $form, $search_text, $button_text, $label ) {
-	$onfocus = " onfocus=\"if (this.value == '$search_text') {this.value = '';}\"";
-	$onblur  = " onblur=\"if (this.value == '') {this.value = '$search_text';}\"";
-	$form = '
-		<form method="get" class="searchform" action="' . esc_attr( genesis_get_option('google-cse-url', 'wpselect-child-theme-settings') ) . '" >' . $label . '
-		<input type="text" value="' . $search_text . '" name="q" class="s"' . $onfocus . $onblur . ' />
-		<input type="submit" name="submit" class="searchsubmit" value="' . $button_text . '" />
-		</form>
-	';
-	return $form;
+	/**
+	 * Customize the search text
+	 * genesis/lib/structure/search.php
+	 */
+	add_filter( 'genesis_search_text', 'wpselect_genesis_search_text');
+	function wpselect_genesis_search_text() {
+		return esc_attr('Google Search ...');
+	}
+
+	/**
+	 * Customize the search form
+	 * genesis/lib/structure/search.php
+	 */
+	add_filter( 'genesis_search_form', 'wpselect_genesis_search_form', 10, 4);
+	function wpselect_genesis_search_form( $form, $search_text, $button_text, $label ) {
+		$onfocus = " onfocus=\"if (this.value == '$search_text') {this.value = '';}\"";
+		$onblur  = " onblur=\"if (this.value == '') {this.value = '$search_text';}\"";
+		$form = '
+			<form method="get" class="searchform" action="' . esc_attr( genesis_get_option('google-cse-url', 'wpselect-child-theme-settings') ) . '" >' . $label . '
+			<input type="text" value="' . $search_text . '" name="q" class="s"' . $onfocus . $onblur . ' />
+			<input type="submit" name="submit" class="searchsubmit" value="' . $button_text . '" />
+			</form>
+		';
+		return $form;
+	}
+
 }
 
 /** YARPP Related Posts */

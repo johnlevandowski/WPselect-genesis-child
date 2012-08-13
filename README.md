@@ -1,6 +1,36 @@
 Child Theme for Genesis Framework by [wpselect.com](http://wpselect.com/ "wpselect.com")
 ========================================================================================
 
+Features
+--------
+
+### 4 additional widget areas useful for inserting advertisements ###
+* Before Content Sidebar Wrap
+* After First Post
+* Before Post Content
+* After Post Content
+
+### Social media icon css classes for use in menus ###
+* wpselect-social-email
+* wpselect-social-facebook
+* wpselect-social-flickr
+* wpselect-social-google-plus
+* wpselect-social-linkedin
+* wpselect-social-pinterest
+* wpselect-social-rss
+* wpselect-social-twitter
+* wpselect-social-youtube
+
+### Other features ###
+* Search using google custom search
+* Settings to customize credits text in footer
+* Archive and Landing page templates
+* Responsive design using flexible widths
+* Support for YARPP integrated
+* Support for custom background
+* Support for custom header
+* Performance optimized using css sprites and minification
+
 Changelog
 ---------
 
