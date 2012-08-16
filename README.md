@@ -23,6 +23,7 @@ Features
 
 ### Other features ###
 * Search using google custom search
+* Color Styles (Green, Red)
 * Settings to customize credits text in footer
 * Archive and Landing page templates
 * Responsive design using flexible widths
@@ -34,6 +35,7 @@ Features
 Changelog
 ---------
 
+* Red color style
 * Custom credits text in footer with theme settings
 * Minify stylesheet with version number
 * Google Custom Search and 404 templates

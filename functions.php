@@ -21,6 +21,9 @@ function add_viewport_meta_tag() {
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
 }
 
+/** Create additional color style options */
+add_theme_support( 'genesis-style-selector', array( 'wpselect-red' => 'Red' ) );
+
 /** Add support for custom background */
 add_theme_support( 'custom-background' );
 
@@ -120,6 +123,7 @@ function wpselect_jpeg_quality( $quality ) {
 	return (int)79;
 }
 
+//** Google custom search if activated */
 if ( genesis_get_option('google-cse-activate', 'wpselect-child-theme-settings') == 1 ) {
 
 	/**
@@ -153,7 +157,7 @@ if ( genesis_get_option('google-cse-activate', 'wpselect-child-theme-settings') 
 /** YARPP Related Posts */
 add_action( 'genesis_after_post_content', 'wpselect_related_posts', 9 );
 function wpselect_related_posts() {
-	if ( is_single() ) { 
-		if ( function_exists('related_posts') ) : related_posts(); endif;
+	if ( is_single() && function_exists('related_posts') ) { 
+		related_posts();
 	}
 }

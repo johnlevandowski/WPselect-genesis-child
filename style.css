@@ -60,6 +60,7 @@
 * Gravity Forms
 * WPselect Widget Areas
 * WPselect Landing Page
+* WPselect Red
 * Responsive Design
 
 */
@@ -1719,6 +1720,95 @@ div.gform_wrapper .gform_footer {
 .wpselect-landing #header,
 .wpselect-landing #header .wrap {
 	min-height: 52px;
+}
+
+
+/* WPselect Red
+------------------------------------------------------------ */
+
+.wpselect-red a,
+.wpselect-red a:visited,
+.wpselect-red h2 a,
+.wpselect-red h2 a:visited {
+	color: #a41600;
+}
+
+.wpselect-red ::-moz-selection,
+.wpselect-red ::selection {
+	background-color: #a41600;
+}
+
+.wpselect-red h2 a:hover {
+	color: #333;
+}
+
+.wpselect-red .menu-primary a {
+	color: #fff;
+}
+
+.wpselect-red .menu-secondary a {
+	color: #dcdbd6;
+}
+
+.wpselect-red .menu-secondary li a:active,
+.wpselect-red .menu-secondary li a:hover,
+.wpselect-red .menu-secondary .current_page_item a,
+.wpselect-red .menu-secondary .current-cat a,
+.wpselect-red .menu-secondary .current-menu-item a {
+	color: #171310;
+}
+
+.wpselect-red #nav,
+.wpselect-red .menu-primary,
+.wpselect-red input[type="button"],
+.wpselect-red input[type="submit"] {
+	background-color: #ba1a00;
+}
+
+.wpselect-red blockquote p,
+.wpselect-red .post-info a,
+.wpselect-red .post-info a:visited,
+.wpselect-red .post-meta a,
+.wpselect-red .post-meta a:visited,
+.wpselect-red .enews h4 {
+	color: #ba1a00;
+}
+
+.wpselect-red #nav {
+	border-bottom: 1px solid #9c1a03;
+	border-top: 1px solid #9c1a03;
+}
+
+.wpselect-red .menu-primary li a:active,
+.wpselect-red .menu-primary li a:hover,
+.wpselect-red .menu-primary .current_page_item a,
+.wpselect-red .menu-primary .current-cat a,
+.wpselect-red .menu-primary .current-menu-item a,
+.wpselect-red .menu-primary li li a,
+.wpselect-red .menu-primary li li a:link,
+.wpselect-red .menu-primary li li a:visited,
+.wpselect-red input:hover[type="button"],
+.wpselect-red input:hover[type="submit"] {
+	background-color: #9c1a03;
+}
+
+.wpselect-red .menu-primary li li a:active,
+.wpselect-red .menu-primary li li a:hover {
+	background-color: #ba1a00;
+}
+
+.wpselect-red .post-info a:hover,
+.wpselect-red .post-meta a:hover {
+	color: #9c1a03;
+}
+
+.wpselect-red input[type="button"],
+.wpselect-red input[type="submit"] {
+	border: 1px solid #9c1a03;
+}
+
+.wpselect-red .enews {
+	background: url(images/red/enews-ribbon.png) no-repeat top left;
 }
 
 

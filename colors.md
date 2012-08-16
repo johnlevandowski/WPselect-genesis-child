@@ -15,3 +15,9 @@ Colors Used
 * #274521
 * #1b2615
 * #171310
+
+Red
+---
+* #ba1a00 - Primary
+* #9c1a03 - Secondary
+* #a41600 - Link
