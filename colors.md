@@ -21,3 +21,15 @@ Red
 * #ba1a00 - Primary
 * #9c1a03 - Secondary
 * #a41600 - Link
+
+Orange
+------
+* #d9751d - Primary
+* #be6d23 - Secondary
+* #d37f35 - Link
+
+Blue
+----
+* #0080ba - Primary
+* #036b9c - Secondary
+* #0072a4 - Link

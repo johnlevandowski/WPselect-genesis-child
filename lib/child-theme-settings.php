@@ -47,9 +47,9 @@ class WPselect_Child_Theme_Settings extends Genesis_Admin_Boxes {
 			'google-cse-activate' => 1,
 			'google-cse-id'       => '009034775234597001862:WMX2724661',
 			'google-cse-url'      => home_url('/google-cse/'),
-			'credits-text'        => 'Powered by <a title="Genesis Framework" href="http://www.studiopress.com/themes/genesis">Genesis</a>, <a title="Hosting by HostGator" href="http://wpselect.com/go/hostgator/">HostGator</a>, [footer_wordpress_link] and [wpselect_page_stats]
+			'credits-text'        => 'Powered by <a title="Genesis Framework" href="http://wpselect.com/go/genesis/">Genesis</a>, <a title="Hosting by HostGator" href="http://wpselect.com/go/hostgator/">HostGator</a>, [footer_wordpress_link] and [wpselect_page_stats]
 
-Copyright [footer_copyright] &middot; <a title="Privacy Policy" href="/privacy-policy/">Privacy Policy</a> &middot; <a title="Disclaimer" href="/disclaimer/">Disclaimer</a> &middot; <a title="FTC Disclosure" href="/ftc-disclosure/">FTC Disclosure</a> &middot; <a title="Image Attribution" href="/image-attribution/">Image Attribution</a>',
+Copyright [footer_copyright] &middot; <a title="Privacy Policy" href="' . network_home_url() . 'privacy-policy/">Privacy Policy</a> &middot; <a title="Disclaimer" href="' . network_home_url() . 'disclaimer/">Disclaimer</a> &middot; <a title="FTC Disclosure" href="' . network_home_url() . 'ftc-disclosure/">FTC Disclosure</a> &middot; <a title="Image Attribution" href="' . network_home_url() . 'image-attribution/">Image Attribution</a>',
 		);
 
 		$this->create( $page_id, $menu_ops, $page_ops, $settings_field, $default_settings );
