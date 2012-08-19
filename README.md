@@ -4,13 +4,30 @@ Child Theme for Genesis Framework by [wpselect.com](http://wpselect.com/ "wpsele
 Features
 --------
 
+* 4 color styles (Green, Blue, Orange, Red)
+* 6 layout options
+* Custom background
+* Custom header
+* 3 footer widgets
+* Fixed width
+* Mobile responsive with flexible widths
+* Threaded comments
+* Archive template
+* Landing Page template
+* YARPP custom template integrated
+* Performance optimized using css sprites and minification
+
+### Theme Options ###
+* Custom credits text in footer
+* Google custom search engine integrated
+
 ### 4 additional widget areas useful for inserting advertisements ###
 * Before Content Sidebar Wrap
 * After First Post
 * Before Post Content
 * After Post Content
 
-### Social media icon css classes for use in menus ###
+### Social media icon css classes for use in secondary navigation menu ###
 * wpselect-social-email
 * wpselect-social-facebook
 * wpselect-social-flickr
@@ -21,20 +38,10 @@ Features
 * wpselect-social-twitter
 * wpselect-social-youtube
 
-### Other features ###
-* Search using google custom search
-* Color Styles (Green, Red)
-* Settings to customize credits text in footer
-* Archive and Landing page templates
-* Responsive design using flexible widths
-* Support for YARPP integrated
-* Support for custom background
-* Support for custom header
-* Performance optimized using css sprites and minification
-
 Changelog
 ---------
 
+* Blue and Orange color style
 * Red color style
 * Custom credits text in footer with theme settings
 * Minify stylesheet with version number

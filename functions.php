@@ -22,7 +22,12 @@ function add_viewport_meta_tag() {
 }
 
 /** Create additional color style options */
-add_theme_support( 'genesis-style-selector', array( 'wpselect-red' => 'Red' ) );
+add_theme_support( 'genesis-style-selector', array(
+	'wpselect-blue' => 'Blue',
+	'wpselect-orange' => 'Orange',
+	'wpselect-red' => 'Red',
+	)
+);
 
 /** Add support for custom background */
 add_theme_support( 'custom-background' );

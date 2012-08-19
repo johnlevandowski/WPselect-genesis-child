@@ -63,6 +63,8 @@
 * Gravity Forms
 * WPselect Widget Areas
 * WPselect Landing Page
+* WPselect Blue
+* WPselect Orange
 * WPselect Red
 * Responsive Design
 
@@ -1776,6 +1778,12 @@ div.gform_wrapper .gform_footer {
 	padding: 0 25px 10px 0;
 }
 
+.content-sidebar .wpselect_before_post_content .widget,
+.content-sidebar-sidebar .wpselect_before_post_content .widget {
+	float: right;
+	padding: 0 0 10px 25px;
+}
+
 .wpselect_before_post_content .textwidget {
 	padding: 0;
 }
@@ -1814,6 +1822,150 @@ div.gform_wrapper .gform_footer {
 .wpselect-landing #header,
 .wpselect-landing #header .wrap {
 	min-height: 52px;
+}
+
+
+/* WPselect Blue
+------------------------------------------------------------ */
+
+.wpselect-blue a,
+.wpselect-blue a:visited,
+.wpselect-blue h2 a,
+.wpselect-blue h2 a:visited {
+	color: #0072a4;
+}
+
+.wpselect-blue ::-moz-selection,
+.wpselect-blue ::selection {
+	background-color: #0072a4;
+}
+
+.wpselect-blue h2 a:hover {
+	color: #333;
+}
+
+.wpselect-blue #nav,
+.wpselect-blue input[type="button"],
+.wpselect-blue input[type="submit"] {
+	background-color: #0080ba;
+}
+
+.wpselect-blue blockquote p,
+.wpselect-blue .post-info a,
+.wpselect-blue .post-info a:visited,
+.wpselect-blue .post-meta a,
+.wpselect-blue .post-meta a:visited,
+.wpselect-blue .enews h4 {
+	color: #0080ba;
+}
+
+.wpselect-blue #nav {
+	border-bottom: 1px solid #036b9c;
+	border-top: 1px solid #036b9c;
+}
+
+.wpselect-blue #nav li a:active,
+.wpselect-blue #nav li a:hover,
+.wpselect-blue #nav .current_page_item a,
+.wpselect-blue #nav .current-cat a,
+.wpselect-blue #nav .current-menu-item a,
+.wpselect-blue #nav li li a,
+.wpselect-blue #nav li li a:link,
+.wpselect-blue #nav li li a:visited,
+.wpselect-blue input:hover[type="button"],
+.wpselect-blue input:hover[type="submit"] {
+	background-color: #036b9c;
+}
+
+.wpselect-blue #nav li li a:active,
+.wpselect-blue #nav li li a:hover {
+	background-color: #0080ba;
+}
+
+.wpselect-blue .post-info a:hover,
+.wpselect-blue .post-meta a:hover {
+	color: #036b9c;
+}
+
+.wpselect-blue input[type="button"],
+.wpselect-blue input[type="submit"] {
+	border: 1px solid #036b9c;
+}
+
+.wpselect-blue .enews {
+	background: url(images/blue/enews-ribbon.png) no-repeat top left;
+}
+
+
+/* WPselect Orange
+------------------------------------------------------------ */
+
+.wpselect-orange a,
+.wpselect-orange a:visited,
+.wpselect-orange h2 a,
+.wpselect-orange h2 a:visited {
+	color: #d37f35;
+}
+
+.wpselect-orange ::-moz-selection,
+.wpselect-orange ::selection {
+	background-color: #d37f35;
+}
+
+.wpselect-orange h2 a:hover {
+	color: #333;
+}
+
+.wpselect-orange #nav,
+.wpselect-orange input[type="button"],
+.wpselect-orange input[type="submit"] {
+	background-color: #d9751d;
+}
+
+.wpselect-orange blockquote p,
+.wpselect-orange .post-info a,
+.wpselect-orange .post-info a:visited,
+.wpselect-orange .post-meta a,
+.wpselect-orange .post-meta a:visited,
+.wpselect-orange .enews h4 {
+	color: #d9751d;
+}
+
+.wpselect-orange #nav {
+	border-bottom: 1px solid #be6d23;
+	border-top: 1px solid #be6d23;
+}
+
+.wpselect-orange #nav li a:active,
+.wpselect-orange #nav li a:hover,
+.wpselect-orange #nav .current_page_item a,
+.wpselect-orange #nav .current-cat a,
+.wpselect-orange #nav .current-menu-item a,
+.wpselect-orange #nav li li a,
+.wpselect-orange #nav li li a:link,
+.wpselect-orange #nav li li a:visited,
+.wpselect-orange input:hover[type="button"],
+.wpselect-orange input:hover[type="submit"] {
+	background-color: #be6d23;
+}
+
+.wpselect-orange #nav li li a:active,
+.wpselect-orange #nav li li a:hover {
+	background-color: #d9751d;
+}
+
+.wpselect-orange .post-info a:hover,
+.wpselect-orange .post-meta a:hover {
+	color: #be6d23;
+}
+
+.wpselect-orange input[type="button"],
+.wpselect-orange input[type="submit"] {
+	border: 1px solid #be6d23;
+}
+
+.wpselect-orange .enews {
+	background: url(images/orange/enews-ribbon.png) no-repeat top left;
 }
 
 
