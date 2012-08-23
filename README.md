@@ -8,7 +8,7 @@ Features
 * 6 layout options
 * Custom background
 * Custom header
-* 3 footer widgets
+* 3 footer widget areas
 * Fixed width
 * Mobile responsive with flexible widths
 * Threaded comments

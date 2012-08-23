@@ -185,7 +185,7 @@ body {
 ------------------------------------------------------------ */
 
 #header {
-	background-color: #171310;
+	background-color: #2d2d2d;
 	margin: 0 auto;
 	min-height: 90px;
 	width: 100%;
@@ -428,7 +428,7 @@ ul.menu li.sfHover ul,
 #nav li li a:visited {
 	background: none;
 	background-color: #274521;
-	border: 1px solid #1b2615;
+	border: 1px solid #274521;
 	border-top: none;
 	color: #fff;
 	font-size: 12px;
@@ -524,9 +524,9 @@ ul.menu li.sfHover ul,
 ------------------------------------------------------------ */
 
 #subnav {
-	background-color: #171310;
-	border-bottom: 1px solid #1b2615;
-	border-top: 1px solid #1b2615;
+	background-color: #2d2d2d;
+	border-bottom: 1px solid #333;
+	border-top: 1px solid #333;
 	clear: both;
 	color: #333;
 	font-size: 14px;
@@ -559,7 +559,7 @@ ul.menu li.sfHover ul,
 #subnav .current-cat a,
 #subnav .current-menu-item a {
 	background-color: #dcdbd6;
-	color: #171310;
+	color: #333;
 }
 
 #subnav li li a,
@@ -579,7 +579,7 @@ ul.menu li.sfHover ul,
 
 #subnav li li a:active,
 #subnav li li a:hover {
-	background-color: #fff;
+	background-color: #ebebeb;
 	color: #333;
 }
 
@@ -754,15 +754,19 @@ ul.menu li.sfHover ul,
 ------------------------------------------------------------ */
 
 .taxonomy-description {
-	background-color: #fff;
-	border-bottom: 1px solid #dcdbd6;
-	margin: -10px 0 30px;
-	padding: 0 0 15px;
+	background-color: #ebebeb;
+	border: 4px solid #dcdbd6;
+	margin: 10px;
+	padding: 10px;
+}
+
+.taxonomy-description h1 {
+	color: #4f814b;
+	font-size: 20px;
 }
 
 .taxonomy-description p {
 	font-size: 14px;
-	padding: 15px 15px 0;
 }
 
 
@@ -977,9 +981,7 @@ h1 {
 	font-size: 30px;
 }
 
-.taxonomy-description h1 {
-	margin: 0;
-}
+
 
 h2,
 h2 a,
@@ -1011,7 +1013,6 @@ h4 {
 	font-size: 20px;
 }
 
-.taxonomy-description h1,
 .widget-area h4 {
 	background-color: #ebebeb;
 	font-size: 16px;
@@ -1596,8 +1597,9 @@ input:hover[type="submit"] {
 ------------------------------------------------------------ */
 
 #footer {
-	background-color: #171310;
-	border-top: 1px solid #1b2615;
+	background-color: #2d2d2d;
+	border-bottom: 1px solid #333;
+	border-top: 1px solid #333;
 	clear: both;
 	font-size: 14px;
 	margin: 0 auto;
@@ -1613,6 +1615,7 @@ input:hover[type="submit"] {
 #footer p {
 	color: #fff;
 	font-size: inherit;
+	padding: 0 20px;
 }
 
 #footer a,
@@ -1627,15 +1630,13 @@ input:hover[type="submit"] {
 
 #footer .gototop {
 	float: left;
-	padding-left: 20px;
 	width: 200px;
 }
 
 #footer .creds {
 	float: right;
-	padding-right: 20px;
 	text-align: right;
-	width: 700px;
+	width: 740px;
 }
 
 
@@ -1877,6 +1878,13 @@ div.gform_wrapper .gform_footer {
 	background-color: #036b9c;
 }
 
+.wpselect-blue #nav li li a,
+.wpselect-blue #nav li li a:link,
+.wpselect-blue #nav li li a:visited {
+	border: 1px solid #036b9c;
+	border-top: none;
+}
+
 .wpselect-blue #nav li li a:active,
 .wpselect-blue #nav li li a:hover {
 	background-color: #0080ba;
@@ -1894,6 +1902,10 @@ div.gform_wrapper .gform_footer {
 
 .wpselect-blue .enews {
 	background: url(images/blue/enews-ribbon.png) no-repeat top left;
+}
+
+.wpselect-blue .taxonomy-description h1 {
+	color: #0080ba;
 }
 
 
@@ -1949,6 +1961,13 @@ div.gform_wrapper .gform_footer {
 	background-color: #be6d23;
 }
 
+.wpselect-orange #nav li li a,
+.wpselect-orange #nav li li a:link,
+.wpselect-orange #nav li li a:visited {
+	border: 1px solid #be6d23;
+	border-top: none;
+}
+
 .wpselect-orange #nav li li a:active,
 .wpselect-orange #nav li li a:hover {
 	background-color: #d9751d;
@@ -1966,6 +1985,10 @@ div.gform_wrapper .gform_footer {
 
 .wpselect-orange .enews {
 	background: url(images/orange/enews-ribbon.png) no-repeat top left;
+}
+
+.wpselect-orange .taxonomy-description h1 {
+	color: #d9751d;
 }
 
 
@@ -2021,6 +2044,13 @@ div.gform_wrapper .gform_footer {
 	background-color: #9c1a03;
 }
 
+.wpselect-red #nav li li a,
+.wpselect-red #nav li li a:link,
+.wpselect-red #nav li li a:visited {
+	border: 1px solid #9c1a03;
+	border-top: none;
+}
+
 .wpselect-red #nav li li a:active,
 .wpselect-red #nav li li a:hover {
 	background-color: #ba1a00;
@@ -2038,6 +2068,10 @@ div.gform_wrapper .gform_footer {
 
 .wpselect-red .enews {
 	background: url(images/red/enews-ribbon.png) no-repeat top left;
+}
+
+.wpselect-red .taxonomy-description h1 {
+	color: #ba1a00;
 }
 
 

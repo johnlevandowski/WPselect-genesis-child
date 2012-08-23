@@ -105,7 +105,7 @@ function wpselect_page_stats_shortcode( $atts ) {
  */
 add_filter('genesis_footer_creds_text', 'wpselect_footer_creds_text');
 function wpselect_footer_creds_text($creds_text) {
-	$creds_text = wpautop( genesis_get_option('credits-text', 'wpselect-child-theme-settings') );
+	$creds_text = '</p>' . wpautop( genesis_get_option('credits-text', 'wpselect-child-theme-settings') ) . '<p>';
 	return $creds_text;
 }
 
