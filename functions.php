@@ -36,7 +36,7 @@ add_theme_support( 'custom-background' );
  * Add support for custom header
  * genesis/lib/structure/header.php
  */
-add_theme_support( 'custom-header', array( 'width' => 960, 'flex-height' => true, 'height' => 90, 'default-text-color' => 'fff', 'wp-head-callback' => 'wpselect_custom_header_style' ) );
+add_theme_support( 'custom-header', array( 'width' => 1140, 'flex-height' => true, 'height' => 90, 'default-text-color' => 'fff', 'wp-head-callback' => 'wpselect_custom_header_style' ) );
 function wpselect_custom_header_style() {
 	/** If no options set, don't waste the output. Do nothing. */
 	if ( HEADER_TEXTCOLOR == get_header_textcolor() && HEADER_IMAGE == get_header_image() )

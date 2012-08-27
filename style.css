@@ -7,7 +7,7 @@
 
 	Version: 0.9.0
 
-	Tags: blue, gray, white, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments
+	Tags: green, blue, orange, red, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments
 
 	Template: genesis
 	Template Version: 1.8.2
@@ -177,7 +177,7 @@ body {
 
 .wrap {
 	margin: 0 auto;
-	width: 960px;
+	width: 1140px;
 }
 
 
@@ -204,7 +204,7 @@ body {
 	float: left;
 	overflow: hidden;
 	padding: 10px 0 10px 20px;
-	width: 640px;
+	width: 64%;
 }
 
 #title {
@@ -229,7 +229,7 @@ body {
 #header .widget-area {
 	float: right;
 	padding: 25px 20px 0 0;
-	width: 260px;
+	width: 30%;
 }
 
 
@@ -734,7 +734,7 @@ ul.menu li.sfHover ul,
 	margin: 0 auto;
 	overflow: hidden;
 	padding: 20px 0;
-	width: 960px;
+	width: 1140px;
 }
 
 
@@ -775,7 +775,7 @@ ul.menu li.sfHover ul,
 
 #content-sidebar-wrap {
 	float: left;
-	width: 82.50%;
+	width: 81%;
 }
 
 .content-sidebar #content-sidebar-wrap,
@@ -796,7 +796,7 @@ ul.menu li.sfHover ul,
 #content {
 	background-color: #fff;
 	float: left;
-	width: 70.84%;
+	width: 66%;
 }
 
 .sidebar-content #content,
@@ -1075,7 +1075,7 @@ h5 {
 
 .entry-content th {
 	font-style: normal;
-	font-weight: bold;
+	font-weight: 700;
 	margin: 0;
 	padding: 4px 10px 4px 0;
 	text-align: left;
@@ -1286,7 +1286,7 @@ p.wp-caption-text {
 .navigation {
 	font-size: 14px;
 	overflow: hidden;
-	padding: 20px 20px;
+	padding: 20px;
 }
 
 .navigation li {
@@ -1315,12 +1315,12 @@ p.wp-caption-text {
 	display: inline;
 	float: right;
 	font-size: 14px;
-	width: 27.09%;
+	width: 32%;
 }
 
 #sidebar-alt {
 	float: left;
-	width: 15.63%;
+	width: 17.4%;
 }
 
 .sidebar-content #sidebar,
@@ -1517,7 +1517,7 @@ input:hover[type="submit"] {
 
 #wp-calendar thead {
 	background-color: #f5f5f5;
-	font-weight: bold;
+	font-weight: 700;
 	margin: 10px 0 0;
 }
 
@@ -1630,13 +1630,13 @@ input:hover[type="submit"] {
 
 #footer .gototop {
 	float: left;
-	width: 200px;
+	width: 32%;
 }
 
 #footer .creds {
 	float: right;
 	text-align: right;
-	width: 740px;
+	width: 66%;
 }
 
 
@@ -1676,7 +1676,7 @@ input:hover[type="submit"] {
 
 .comment-list li,
 .ping-list li {
-	font-weight: bold;
+	font-weight: 700;
 	list-style-type: none;
 	margin: 15px 0 5px;
 	padding: 10px 15px;
@@ -1765,12 +1765,12 @@ div.gform_wrapper .gform_footer {
 ------------------------------------------------------------ */
 
 .wpselect_before_content_sidebar_wrap .widget {
-	padding: 0 0 20px 0;
+	padding: 0 0 20px;
 	text-align: center;
 }
 
 .wpselect_after_post .widget {
-	padding: 0 0 20px 0;
+	padding: 0 0 20px;
 	text-align: center;
 }
 
@@ -1790,7 +1790,7 @@ div.gform_wrapper .gform_footer {
 }
 
 .wpselect_after_post_content .widget {
-	padding: 0 0 25px 0;
+	padding: 0 0 25px;
 	text-align: center;
 }
 
@@ -2088,9 +2088,7 @@ div.gform_wrapper .gform_footer {
 	.footer-widgets-2,
 	.footer-widgets-3,
 	.sidebar,
-	#content,
-	#content-sidebar-wrap,
-	#sidebar-alt {
+	#content {
 		width: 100%;
 	}
 
@@ -2124,16 +2122,6 @@ div.gform_wrapper .gform_footer {
 }
 
 @media only screen and (max-width: 960px) {
-
-	body {
-		width: 100%;
-		margin: 0 auto;
-	}
-
-	.wrap,
-	#inner {
-		width: 100%;
-	}
 
 	.header-image #title,
 	.header-image #title a,
@@ -2181,5 +2169,24 @@ div.gform_wrapper .gform_footer {
 		padding: 0;
 		text-align: center;
 	}
+	
+	#content-sidebar-wrap,
+	#sidebar-alt {
+		width: 100%;
+	}
 
+}
+
+@media only screen and (max-width: 1140px) {
+
+	body {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.wrap,
+	#inner {
+		width: 100%;
+	}
+	
 }

@@ -9,7 +9,7 @@ Features
 * Custom background
 * Custom header
 * 3 footer widget areas
-* Fixed width
+* 1140px fixed width
 * Mobile responsive with flexible widths
 * Threaded comments
 * Archive template
@@ -41,6 +41,7 @@ Features
 Changelog
 ---------
 
+* 1140px max width, flexible header and footer
 * Blue and Orange color style
 * Red color style
 * Custom credits text in footer with theme settings
