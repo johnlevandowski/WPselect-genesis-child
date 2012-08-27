@@ -41,6 +41,7 @@ Features
 Changelog
 ---------
 
+* Archive page to column classes css
 * 1140px max width, flexible header and footer
 * Blue and Orange color style
 * Red color style

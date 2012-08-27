@@ -45,7 +45,6 @@
 * Post Meta
 * Author Box
 * Sticky Posts
-* Archive Page
 * Post Icons
 * Images
 * Post Navigation
@@ -1044,7 +1043,6 @@ h5 {
 	padding: 0 0 25px;
 }
 
-.archive-page ul li,
 .entry-content ul li {
 	list-style-type: square;
 	margin: 0 0 0 30px;
@@ -1055,7 +1053,6 @@ h5 {
 	margin: 0 0 0 35px;
 }
 
-.archive-page ul ul,
 .entry-content ol ol,
 .entry-content ul ul {
 	padding: 0;
@@ -1148,16 +1145,6 @@ h5 {
 	background-color: #ebebeb;
 	margin: 0 0 40px;
 	padding: 20px;
-}
-
-
-/* Archive Page
------------------------------------------------------------- */
-
-.archive-page {
-	float: left;
-	margin-right: 2%;
-	width: 47%;
 }
 
 
@@ -2080,7 +2067,6 @@ div.gform_wrapper .gform_footer {
 
 @media only screen and (max-width: 750px) {
 
-	.archive-page,
 	.wpselect-landing #inner,
 	.wpselect-landing #header .wrap,
 	.wpselect-landing #footer .wrap,

@@ -9,7 +9,7 @@
  */
 function wpselect_page_archive_content() { ?>
 
-<div class="archive-page">
+<div class="one-half first">
 
 	<h2><?php _e( 'Posts:', 'genesis' ); ?></h2>
 	<ul>
@@ -18,7 +18,7 @@ function wpselect_page_archive_content() { ?>
 
 </div><!-- end .archive-page-->
 
-<div class="archive-page">
+<div class="one-half">
 
 	<h2><?php _e( 'Pages:', 'genesis' ); ?></h2>
 	<ul>
