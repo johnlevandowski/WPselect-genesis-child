@@ -27,6 +27,7 @@
 * Image Header - Partial Width
 * Image Header - Full Width
 * Header Navigation
+* Header Navigation Extras
 * Primary Navigation
 * Primary Navigation Extras
 * Secondary Navigation
@@ -186,7 +187,7 @@ body {
 #header {
 	background-color: #2d2d2d;
 	margin: 0 auto;
-	min-height: 90px;
+	overflow: hidden;
 	width: 100%;
 }
 
@@ -196,13 +197,12 @@ body {
 	background-size: cover;
 	-moz-background-size: cover;
 	-webkit-background-size: cover;
-	min-height: 90px;
 }
 
 #title-area {
 	float: left;
 	overflow: hidden;
-	padding: 10px 0 10px 20px;
+	padding: 0 0 10px 20px;
 	width: 64%;
 }
 
@@ -227,7 +227,7 @@ body {
 
 #header .widget-area {
 	float: right;
-	padding: 25px 20px 0 0;
+	padding: 10px 20px 0 0;
 	width: 30%;
 }
 
@@ -267,18 +267,18 @@ body {
 ------------------------------------------------------------ */
 
 #header .menu {
-	background-color: #f5f5f5;
+	background-color: #2d2d2d;
 	clear: both;
 	color: #333;
 	font-size: 14px;
 	margin: 0 auto;
 	overflow: hidden;
-	width: 100%;
+	width: auto;
 }
 
-#header .menu {
-	border: 1px solid #ddd;
-	box-sizing: border-box;
+#header ul {
+	float: right;
+	width: auto;
 }
 
 #header .menu ul {
@@ -292,8 +292,7 @@ body {
 }
 
 #header .menu a {
-	border-right: 1px solid #ddd;
-	color: #333;
+	color: #dcdbd6;
 	display: block;
 	padding: 7px 15px 6px;
 	position: relative;
@@ -305,7 +304,7 @@ body {
 #header .menu .current_page_item a,
 #header .menu .current-cat a,
 #header .menu .current-menu-item a {
-	background-color: #fff;
+	background-color: #dcdbd6;
 	color: #333;
 }
 
@@ -313,8 +312,8 @@ body {
 #header .menu li li a:link,
 #header .menu li li a:visited {
 	background: none;
-	background-color: #fff;
-	border: 1px solid #ddd;
+	background-color: #dcdbd6;
+	border: 1px solid #dcdbd6;
 	border-top: none;
 	color: #333;
 	font-size: 12px;
@@ -326,7 +325,7 @@ body {
 
 #header .menu li li a:active,
 #header .menu li li a:hover {
-	background-color: #f5f5f5;
+	background-color: #ebebeb;
 	color: #333;
 }
 
@@ -344,7 +343,7 @@ body {
 }
 
 #header .menu li ul ul {
-	margin: -36px 0 0 159px;
+	margin: -37px 0 0 159px;
 }
 
 .menu li:hover ul ul,
@@ -378,6 +377,11 @@ ul.menu li.sfHover ul,
 #wpadminbar li:hover ul ul {
 	left: 0;
 }
+
+
+/* Header Navigation Extras
+ * in Secondary Navigation Extras section
+------------------------------------------------------------ */
 
 
 /* Primary Navigation
@@ -486,16 +490,16 @@ ul.menu li.sfHover ul,
 /* Primary Navigation Extras
 ------------------------------------------------------------ */
 
-.menu li.right {
+#nav li.right {
 	float: right;
 	padding: 7px 15px 6px;
 }
 
-.menu li.right {
+#nav li.right {
 	color: #fff;
 }
 
-.menu li.right a {
+#nav li.right a {
 	background: none;
 	border: none;
 	color: #fff;
@@ -503,17 +507,17 @@ ul.menu li.sfHover ul,
 	text-decoration: none;
 }
 
-.menu li.right a:hover {
+#nav li.right a:hover {
 	color: #fff;
 	text-decoration: underline;
 }
 
-.menu li.search {
+#nav li.search {
 	padding: 0 10px;
 }
 
-.menu li.rss a,
-.menu li.twitter a {
+#nav li.rss a,
+#nav li.twitter a {
 	margin: 0 0 0 10px;
 	padding: 0;
 }
@@ -531,16 +535,17 @@ ul.menu li.sfHover ul,
 	font-size: 14px;
 	margin: 0 auto;
 	overflow: hidden;
-	width: 100%;
+	width: auto;
 }
 
 #subnav ul {
-	float: left;
-	width: 100%;
+	float: right;
+	padding: 0 20px 0 0;
+	width: auto;
 }
 
 #subnav li {
-	float: right;
+	float: left;
 	list-style-type: none;
 }
 
@@ -625,6 +630,24 @@ ul.menu li.sfHover ul,
 /* Secondary Navigation Extras
 ------------------------------------------------------------ */
 
+#header li.wpselect-social-email a,
+#header li.wpselect-social-email a:hover,
+#header li.wpselect-social-facebook a,
+#header li.wpselect-social-facebook a:hover,
+#header li.wpselect-social-flickr a,
+#header li.wpselect-social-flickr a:hover,
+#header li.wpselect-social-google-plus a,
+#header li.wpselect-social-google-plus a:hover,
+#header li.wpselect-social-linkedin a,
+#header li.wpselect-social-linkedin a:hover,
+#header li.wpselect-social-pinterest a,
+#header li.wpselect-social-pinterest a:hover,
+#header li.wpselect-social-rss a,
+#header li.wpselect-social-rss a:hover,
+#header li.wpselect-social-twitter a,
+#header li.wpselect-social-twitter a:hover,
+#header li.wpselect-social-youtube a,
+#header li.wpselect-social-youtube a:hover,
 #subnav li.wpselect-social-email a,
 #subnav li.wpselect-social-email a:hover,
 #subnav li.wpselect-social-facebook a,
@@ -646,80 +669,98 @@ ul.menu li.sfHover ul,
 	background: url(images/wpselect-sprite.png) no-repeat left center;
 	display: block;
 	height: 32px;
-	margin: 5px 7px;
+	margin: 5px 3px;
 	padding: 0;
 	text-indent: -9999px;
 	width: 32px;
 }
 
+#header li.wpselect-social-email a,
 #subnav li.wpselect-social-email a {
 	background-position: 0 -170px;
 }
 
+#header li.wpselect-social-email a:hover,
 #subnav li.wpselect-social-email a:hover {
 	background-position: -34px -170px;
 }
 
+#header li.wpselect-social-facebook a,
 #subnav li.wpselect-social-facebook a {
 	background-position: 0 -68px;
 }
 
+#header li.wpselect-social-facebook a:hover,
 #subnav li.wpselect-social-facebook a:hover {
 	background-position: -34px -68px;
 }
 
+#header li.wpselect-social-flickr a,
 #subnav li.wpselect-social-flickr a {
 	background-position: 0 -204px;
 }
 
+#header li.wpselect-social-flickr a:hover,
 #subnav li.wpselect-social-flickr a:hover {
 	background-position: -34px -204px;
 }
 
+#header li.wpselect-social-google-plus a,
 #subnav li.wpselect-social-google-plus a {
 	background-position: 0 -102px;
 }
 
+#header li.wpselect-social-google-plus a:hover,
 #subnav li.wpselect-social-google-plus a:hover {
 	background-position: -34px -102px;
 }
 
+#header li.wpselect-social-linkedin a,
 #subnav li.wpselect-social-linkedin a {
 	background-position: 0 -136px;
 }
 
+#header li.wpselect-social-linkedin a:hover,
 #subnav li.wpselect-social-linkedin a:hover {
 	background-position: -34px -136px;
 }
 
+#header li.wpselect-social-pinterest a,
 #subnav li.wpselect-social-pinterest a {
 	background-position: 0 -272px;
 }
 
+#header li.wpselect-social-pinterest a:hover,
 #subnav li.wpselect-social-pinterest a:hover {
 	background-position: -34px -272px;
 }
 
+#header li.wpselect-social-rss a,
 #subnav li.wpselect-social-rss a {
 	background-position: 0 0;
 }
 
+#header li.wpselect-social-rss a:hover,
 #subnav li.wpselect-social-rss a:hover {
 	background-position: -34px 0;
 }
 
+#header li.wpselect-social-twitter a,
 #subnav li.wpselect-social-twitter a {
 	background-position: 0 -34px;
 }
 
+#header li.wpselect-social-twitter a:hover,
 #subnav li.wpselect-social-twitter a:hover {
 	background-position: -34px -34px;
 }
 
+#header li.wpselect-social-youtube a,
 #subnav li.wpselect-social-youtube a {
 	background-position: 0 -238px;
 }
 
+#header li.wpselect-social-youtube a:hover,
 #subnav li.wpselect-social-youtube a:hover {
 	background-position: -34px -238px;
 }
